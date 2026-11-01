@@ -1,0 +1,3731 @@
+{
+  "name": "Rapider Continuous Integration / Deployment",
+  "key": "continuous-integration-deployment-ci-cd",
+  "domainKey": "DEV",
+  "appSuite": {
+    "key": "DEV",
+    "title": "Rapider Developer Suite"
+  },
+  "type": "App",
+  "description": "Continuous Integration / Deployment enterprise microapplication in the Rapider Developer Suite.",
+  "isPublic": true,
+  "tags": [
+    "dev",
+    "continuous-integration-deployment-ci-cd",
+    "top-200"
+  ],
+  "iconUrl": "fas fa-code",
+  "icon": "fas fa-code",
+  "route": "continuous-integration-deployment-ci-cd",
+  "rating": 5,
+  "reviewCount": 0,
+  "status": "app-metadata-completed",
+  "coverPage": "<!-- Rapider Official App SOW & Specification | App #102: Continuous Integration / Deployment (CI/CD) (ci-cd) | Domain: DEV -->\n\n# #102 Continuous Integration / Deployment (CI/CD) (`ci-cd`) — Scope of Work (SOW)\n\n- **App Number & Slug:** `#102` / `102-continuous-integration-deployment-ci-cd`\n- **Proposed Rapider App Key:** `ci-cd`\n- **Suite / Domain Key:** `DEV` (Software Engineering & DevSecOps Suite — `Dev*` Canonical Prefix)\n- **Representative Product (`P1`):** CircleCI\n- **Combined Feature Catalog Reference:** [../combined-features/102-continuous-integration-deployment-ci-cd-features.md](../combined-features/102-continuous-integration-deployment-ci-cd-features.md)\n\n---\n\n## 1. Executive Outcome & Target Audience\n\n`ci-cd` is the automated Continuous Integration, Smarter Test Intelligence, SLSA Artifact Provenance, and Progressive Continuous Delivery engine of the Rapider `DEV` suite. Engineering organizations struggle when slow, flaky test suites stall `#101` Merge Queues, long-lived cloud deployment keys create security exposure, or bad production releases require 45-minute manual rebuilds to recover. `ci-cd` combines high-concurrency DAG build pipelines (`DevPipelineDefinition`, `DevPipelineRun`, `DevPipelineStageJob`) with flaky test detection & parallel shard splitting, keyless OIDC federation, immutable SLSA-attested artifacts (`DevBuildArtifact`), and continuous-verification progressive rollouts (`DevDeploymentEnvironment`, `DevDeploymentRecord`).\n\n- **SME Fast-Path Defaults:** Engineering teams pick a Reusable Pipeline Orb/Template (e.g., Node/TypeScript, Python, Go, Flutter, or Cloud Run API with direct `.run.app` URL & `ingress: all` best-practice defaults), connect a `#101` `DevRepository` in two clicks, and immediately get PR status checks, JUnit test insights, `STAGING` auto-deploy, and 1-click `PRODUCTION` promotion.\n- **Enterprise Progressive Disclosure:** Platform SRE and Release Engineering teams unlock historical timing-balanced parallel test splitting, flaky test auto-quarantine via Home `WorkItem`s, SLSA build provenance attestations, Segregation-of-Duties `PRODUCTION` approval gates, deployment freeze windows (aligned with `FIN` close calendars), Canary/Blue-Green traffic shifting with `#103`/`#097` auto-rollback verification, and 4-key DORA metrics.\n- **Measurable Success Outcomes:**\n  - `40–70%` faster CI feedback cycles via lockfile layer caching, monorepo path filtering, and timing-balanced test splitting.\n  - Zero static cloud credentials stored in pipeline configs via short-lived OIDC tokens and Platform Secret Vault injection.\n  - Sub-60-second production recovery by rolling back to the prior immutable `DevBuildArtifact` digest (`sha256`).\n- **Top 6 Global Benchmarks Synthesized:** `P1` CircleCI, `P2` GitHub Actions, `P3` GitLab CI/CD, `P4` Harness CD & GitOps, `P5` Microsoft Azure Pipelines, and `P6` Atlassian Bitbucket Pipelines.\n\n---\n\n## 2. In-Scope, Out-of-Scope & Suite Ownership Boundaries\n\n### In-Scope\n1. Declarative multi-stage DAG pipelines (`DevPipelineDefinition`), reusable pipeline templates/orbs, monorepo path filters, matrix executions (`DevPipelineRun`), and real-time secret-redacted job logs (`DevPipelineStageJob`).\n2. Smarter Test Intelligence: JUnit/Playwright report ingestion, `FLAKY` test detection, single auto-rerun for flakes, and historical timing-balanced shard splitting.\n3. Immutable build artifacts & SLSA provenance attestations (`DevBuildArtifact`), elastic/self-hosted runner pools (`DevRunnerPool`) with `Decimal128` minute budgets, and keyless OIDC + Secret Vault runtime injection.\n4. Deployment environments (`DevDeploymentEnvironment`), exclusive concurrency locks, freeze blackout windows, Home `WorkItem` prod approvals, Canary/Blue-Green progressive rollouts, continuous post-deploy verification, and instant digest rollback (`DevDeploymentRecord`).\n5. Four-key DORA engineering metrics and grounded AI job failure root-cause diagnostics (`projectChannelMessage`).\n\n### Out-of-Scope\n1. Git repository storage, pull request code review diffs, and branch `CODEOWNERS` rules — owned by `#101 Source Code Hosting & Version Control` (`source-control`).\n2. Authoring OpenAPI specifications, interactive API request collections, and mock servers — owned by `#103 API Development & Testing` (`api-testing`), invoked by `ci-cd` during test/verification gates.\n3. Sprint boards, engineering story estimation, and defect backlogs — owned by `APM` (`apm`, `planning`).\n4. Customer-facing incident ticketing queues — owned by `SUP` (`support`).\n\n### Cross-Suite Ownership & Integration Contract\n\n| Domain / App | Owns (Single Source of Truth) | Integration Contract with `ci-cd` (`#102`) |\n| :--- | :--- | :--- |\n| **`ci-cd` (`#102`)** | `DevPipelineDefinition`, `DevPipelineRun`, `DevPipelineStageJob`, `DevBuildArtifact`, `DevRunnerPool`, `DevDeploymentEnvironment`, `DevDeploymentRecord` | Executes builds, tests, scans, and deployments; publishes commit status checks, release marker",
+  "scopeOfWork": "<!-- Rapider Official App SOW & Specification | App #102: Continuous Integration / Deployment (CI/CD) (ci-cd) | Domain: DEV -->\n\n# #102 Continuous Integration / Deployment (CI/CD) (`ci-cd`) — Scope of Work (SOW)\n\n- **App Number & Slug:** `#102` / `102-continuous-integration-deployment-ci-cd`\n- **Proposed Rapider App Key:** `ci-cd`\n- **Suite / Domain Key:** `DEV` (Software Engineering & DevSecOps Suite — `Dev*` Canonical Prefix)\n- **Representative Product (`P1`):** CircleCI\n- **Combined Feature Catalog Reference:** [../combined-features/102-continuous-integration-deployment-ci-cd-features.md](../combined-features/102-continuous-integration-deployment-ci-cd-features.md)\n\n---\n\n## 1. Executive Outcome & Target Audience\n\n`ci-cd` is the automated Continuous Integration, Smarter Test Intelligence, SLSA Artifact Provenance, and Progressive Continuous Delivery engine of the Rapider `DEV` suite. Engineering organizations struggle when slow, flaky test suites stall `#101` Merge Queues, long-lived cloud deployment keys create security exposure, or bad production releases require 45-minute manual rebuilds to recover. `ci-cd` combines high-concurrency DAG build pipelines (`DevPipelineDefinition`, `DevPipelineRun`, `DevPipelineStageJob`) with flaky test detection & parallel shard splitting, keyless OIDC federation, immutable SLSA-attested artifacts (`DevBuildArtifact`), and continuous-verification progressive rollouts (`DevDeploymentEnvironment`, `DevDeploymentRecord`).\n\n- **SME Fast-Path Defaults:** Engineering teams pick a Reusable Pipeline Orb/Template (e.g., Node/TypeScript, Python, Go, Flutter, or Cloud Run API with direct `.run.app` URL & `ingress: all` best-practice defaults), connect a `#101` `DevRepository` in two clicks, and immediately get PR status checks, JUnit test insights, `STAGING` auto-deploy, and 1-click `PRODUCTION` promotion.\n- **Enterprise Progressive Disclosure:** Platform SRE and Release Engineering teams unlock historical timing-balanced parallel test splitting, flaky test auto-quarantine via Home `WorkItem`s, SLSA build provenance attestations, Segregation-of-Duties `PRODUCTION` approval gates, deployment freeze windows (aligned with `FIN` close calendars), Canary/Blue-Green traffic shifting with `#103`/`#097` auto-rollback verification, and 4-key DORA metrics.\n- **Measurable Success Outcomes:**\n  - `40–70%` faster CI feedback cycles via lockfile layer caching, monorepo path filtering, and timing-balanced test splitting.\n  - Zero static cloud credentials stored in pipeline configs via short-lived OIDC tokens and Platform Secret Vault injection.\n  - Sub-60-second production recovery by rolling back to the prior immutable `DevBuildArtifact` digest (`sha256`).\n- **Top 6 Global Benchmarks Synthesized:** `P1` CircleCI, `P2` GitHub Actions, `P3` GitLab CI/CD, `P4` Harness CD & GitOps, `P5` Microsoft Azure Pipelines, and `P6` Atlassian Bitbucket Pipelines.\n\n---\n\n## 2. In-Scope, Out-of-Scope & Suite Ownership Boundaries\n\n### In-Scope\n1. Declarative multi-stage DAG pipelines (`DevPipelineDefinition`), reusable pipeline templates/orbs, monorepo path filters, matrix executions (`DevPipelineRun`), and real-time secret-redacted job logs (`DevPipelineStageJob`).\n2. Smarter Test Intelligence: JUnit/Playwright report ingestion, `FLAKY` test detection, single auto-rerun for flakes, and historical timing-balanced shard splitting.\n3. Immutable build artifacts & SLSA provenance attestations (`DevBuildArtifact`), elastic/self-hosted runner pools (`DevRunnerPool`) with `Decimal128` minute budgets, and keyless OIDC + Secret Vault runtime injection.\n4. Deployment environments (`DevDeploymentEnvironment`), exclusive concurrency locks, freeze blackout windows, Home `WorkItem` prod approvals, Canary/Blue-Green progressive rollouts, continuous post-deploy verification, and instant digest rollback (`DevDeploymentRecord`).\n5. Four-key DORA engineering metrics and grounded AI job failure root-cause diagnostics (`projectChannelMessage`).\n\n### Out-of-Scope\n1. Git repository storage, pull request code review diffs, and branch `CODEOWNERS` rules — owned by `#101 Source Code Hosting & Version Control` (`source-control`).\n2. Authoring OpenAPI specifications, interactive API request collections, and mock servers — owned by `#103 API Development & Testing` (`api-testing`), invoked by `ci-cd` during test/verification gates.\n3. Sprint boards, engineering story estimation, and defect backlogs — owned by `APM` (`apm`, `planning`).\n4. Customer-facing incident ticketing queues — owned by `SUP` (`support`).\n\n### Cross-Suite Ownership & Integration Contract\n\n| Domain / App | Owns (Single Source of Truth) | Integration Contract with `ci-cd` (`#102`) |\n| :--- | :--- | :--- |\n| **`ci-cd` (`#102`)** | `DevPipelineDefinition`, `DevPipelineRun`, `DevPipelineStageJob`, `DevBuildArtifact`, `DevRunnerPool`, `DevDeploymentEnvironment`, `DevDeploymentRecord` | Executes builds, tests, scans, and deployments; publishes commit status checks, release markers, and DORA metrics. |\n| **`#101` Source Control (`source-control`)** | `DevRepository`, `DevPullRequest`, `DevReleaseTag` | Consumes push, PR, Merge Queue, and release-tag events to trigger `DevPipelineRun`s; reports exact commit SHA status back to `#101` `DevBranchRule` gates. |\n| **`#103` API Testing (`api-testing`)** | `DevApiCollection`, `DevApiTestRun`, `DevApiMonitor` | Invokes `#103` contract suites during `STAGING` gates and listens to `#103` synthetic monitor failures during post-deploy Canary verification (`CICD-022`). |\n| **`#097` Product Analytics & `#096` BI** | `DatTrackedEvent`, `DatDashboard` | Publishes `dev.cicd.deployment.succeeded.v1` markers to `#097` timelines and exports DORA 4-key metrics to `#096` executive scorecards. |\n| **`APM` (`apm`)** | `ApmProject`, `ApmIssue` | Verifies linked `ApmIssue` change-readiness on `PRODUCTION` releases and posts deployment environment badges onto `ApmIssue` timelines. |\n\n---\n\n## 3. Primary Web Pages & Sidebar Navigation Architecture (12 Pages)\n\nAll visible sidebar sections enforce **`>= 3` visible items (`displayOnMenu: true`)**, while detail views, log consoles, and drawers set `displayOnMenu: false`.\n\n| # | Route | Page Title | Sidebar Section | Menu Visible | Key Components & UX |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| 1 | `cicd-overview` | Delivery & DORA Hub | `Pipelines & Builds` | `true` (Order 1) | 4-Key DORA scorecard (Deploy Frequency, Lead Time, CFR, MTTR), active build queue, runner minute burn (`Decimal128`), `#activeFilterTagsBar`. |\n| 2 | `pipelines` | Pipeline Definitions | `Pipelines & Builds` | `true` (Order 2) | `findSWR` directory of `DevPipelineDefinition`s with repo filter, pass-rate sparkline, clickable pipeline name, `Run Pipeline` trigger, icon+text `Edit`, icon-only `Delete`. |\n| 3 | `pipeline-runs` | Build & Run Ledger | `Pipelines & Builds` | `true` (Order 3) | Cross-repo `DevPipelineRun` history (`RUNNING`, `PASSED`, `FAILED`, `CANCELED`, `AWAITING_APPROVAL`), `#activeFilterTagsBar` + `Clear all`, commit SHA & PR links. |\n| 4 | `pipeline-templates` | Reusable Orbs & Templates | `Pipelines & Builds` | `true` (Order 4) | Versioned library of standardized CI/CD workflow templates (Microapp QA, Container SLSA, Cloud Run `.run.app` deploy, `#098` dbt runner). |\n| 5 | `test-insights` | Smarter Test & Flake Insights | `Quality & Artifacts` | `true` (Order 5) | Slowest tests, highest failure rates, `FLAKY` test registry with auto-quarantine status and linked remediation Home `WorkItem`s. |\n| 6 | `build-artifacts` | Artifacts & SLSA Provenance | `Quality & Artifacts` | `true` (Order 6) | `DevBuildArtifact` registry showing immutable `sha256` digest, SLSA attestation badge, CVE scan status, and promoted environments (`STAGING`, `PROD`). |\n| 7 | `runner-pools` | Runner Pools & Compute FinOps | `Quality & Artifacts` | `true` (Order 7) | `DevRunnerPool` fleet monitor (`LINUX_X64`, `ARM64`, `MACOS`, `GPU`), live concurrency utilization, queue latency, and `Decimal128` minute budget caps. |\n| 8 | `environments` | Deployment Environments | `Deployments & Releases` | `true` (Order 8) | Live environment board (`DEV`, `QA`, `PREVIEW`, `STAGING`, `PRODUCTION`) displaying active artifact version, health status, lock state, and freeze banner. |\n| 9 | `deployments` | Releases & Rollbacks | `Deployments & Releases` | `true` (Order 9) | `DevDeploymentRecord` kanban + table (`<rapider-kanban>` + table) across `PENDING_APPROVAL -> DEPLOYING -> VERIFYING -> SUCCEEDED / ROLLED_BACK` with `1-Click Rollback`. |\n| 10 | `freeze-policies` | Freeze Windows & Release Gates | `Deployments & Releases` | `true` (Order 10) | Blackout calendar (`DevDeploymentEnvironment` freeze schedules), Segregation-of-Duties approver rules, and Continuous Verification rollback thresholds. |\n| 11 | `pipeline-run-detail` | DAG Graph, Logs & AI RCA | *(Hidden)* | `false` | Interactive fan-out/fan-in stage DAG (`#/pipeline-run-detail?id=...`), streaming `DevPipelineStageJob` ANSI log console, JUnit failures tab, AI Root-Cause drawer, and `Back to Runs`. |\n| 12 | `deployment-detail` | Progressive Rollout & War-Room | *(Hidden)* | `false` | Canary traffic weight progression (`10% -> 50% -> 100%`), live `#103`/`#097` health verification chart, `projectChannelMessage` release war room, plus sliding `pipeline-env-drawer` (`displayOnMenu: false`). |\n\n---\n\n## 4. Canonical Data Models (`Dev*` — 7 Models)\n\nAll models strictly omit `projectId`, store zero plaintext secrets, use platform UUID `id` + optimistic `version`, and use `Decimal128` for compute credits, budgets, and verification thresholds.\n\n| Model Name | Key Fields & Types | Relationships & External Refs | Invariants & Lifecycle |\n| :--- | :--- | :--- | :--- |\n| **`DevPipelineDefinition`** | `id: UUID`, `code: string`, `name: string`, `repositoryId: UUID`, `yamlSpec: string`, `templateOrbCode: string?`, `triggers: enum(PUSH, PULL_REQUEST, MERGE_QUEUE, RELEASE_TAG, CRON, MANUAL)[]`, `monorepoPathGlobs: string[]`, `defaultRunnerPoolId: UUID`, `oidcCloudRoleArnOrUri: string?`, `vaultSecretRefs: string[]`, `flakyAutoRerunMax: int`, `isEnabled: boolean`, `version: int` | `repositoryId -> DevRepository.id` (`#101`); `defaultRunnerPoolId -> DevRunnerPool.id`. | **Zero-secret invariant:** `yamlSpec` is validated on save to reject inline secrets/tokens (`vaultSecretRefs` and keyless `oidcCloudRoleArnOrUri` only). Cloud Run deploy templates enforce direct `.run.app` URLs and `ingress: all` when configured as public APIs. |\n| **`DevPipelineRun`** | `id: UUID`, `pipelineId: UUID`, `runNumber: int`, `repositoryId: UUID`, `commitSha: string`, `branchOrTag: string`, `pullRequestId: UUID?`, `triggerType: string`, `triggeredByUserId: UUID?`, `status: enum(QUEUED, RUNNING, AWAITING_APPROVAL, PASSED, FAILED, CANCELED, TIMED_OUT)`, `startedAt: datetime?`, `completedAt: datetime?`, `durationSeconds: int`, `computeCreditsUsed: Decimal128`, `flakyTestsDetectedCount: int`, `discussionChannelId: UUID?`, `idempotencyKey: string` | `pipelineId -> DevPipelineDefinition.id`; `pullRequestId -> DevPullRequest.id` (`#101`); `discussionChannelId -> projectChannelMessage`. | `(pipelineId, runNumber)` monotonically increasing. Terminal states (`PASSED`, `FAILED`, `CANCELED`, `TIMED_OUT`) are immutable; re-running creates a linked new attempt record. |\n| **`DevPipelineStageJob`** | `id: UUID`, `pipelineRunId: UUID`, `stageName: string`, `jobName: string`, `shardIndex: int`, `shardTotal: int`, `dependsOnJobNames: string[]`, `runnerPoolId: UUID`, `status: enum(PENDING, RUNNING, PASSED, FAILED, SKIPPED, CANCELED)`, `exitCode: int?`, `cacheHit: boolean`, `testSummaryJson: {passed, failed, skipped, flakyNames}[]`, `redactedLogFileId: UUID?`, `durationMs: int` | `pipelineRunId -> DevPipelineRun.id`; `runnerPoolId -> DevRunnerPool.id`; `redactedLogFileId -> Platform Drive File.id`. | Console logs written to `redactedLogFileId` pass through synchronous multi-pattern + vault-value secret redaction (`***REDACTED***`). |\n| **`DevBuildArtifact`** | `id: UUID`, `pipelineRunId: UUID`, `repositoryId: UUID`, `commitSha: string`, `artifactName: string`, `artifactType: enum(CONTAINER_IMAGE, WEB_BUNDLE, BINARY_PACKAGE, SBOM_ATTESTATION, TEST_REPORT)`, `immutableDigestSha256: string`, `storageUriOrFileId: string`, `sizeBytes: int`, `slsaProvenanceJson: object`, `criticalCveCount: int`, `retentionExpiresAt: datetime?`, `version: int` | `pipelineRunId -> DevPipelineRun.id`; `repositoryId -> DevRepository.id` (`#101`). | `immutableDigestSha256` and `slsaProvenanceJson` are write-once immutable; `PRODUCTION` deployments reject artifacts where `criticalCveCount > 0` unless break-glass approved. |\n| **`DevRunnerPool`** | `id: UUID`, `code: string`, `name: string`, `poolMode: enum(MANAGED_CLOUD, SELF_HOSTED)`, `archType: enum(LINUX_X64, LINUX_ARM64, MACOS_ARM64, GPU_LINUX)`, `maxConcurrency: int`, `activeJobsCount: int`, `creditRatePerMin: Decimal128`, `monthlyCreditBudget: Decimal128`, `creditsUsedMonth: Decimal128`, `status: enum(ONLINE, DEGRADED, DRAINING, PAUSED_BUDGET)`, `version: int` | Referenced by `DevPipelineDefinition` & `DevPipelineStageJob`. | All credit rates and monthly caps use `Decimal128`. Crossing `90%` of `monthlyCreditBudget` opens a FinOps Home `WorkItem`. |\n| **`DevDeploymentEnvironment`** | `id: UUID`, `code: string`, `name: string`, `tier: enum(DEV, QA, PREVIEW, STAGING, PRODUCTION)`, `rolloutStrategy: enum(ROLLING, BLUE_GREEN, CANARY)`, `allowedBranchGlobs: string[]`, `requireApproval: boolean`, `approverUserIds: UUID[]`, `blockCommitAuthorApproval: boolean`, `freezeWindowsJson: {name, startAt, endAt}[]`, `errorRateRollbackThresholdPct: Decimal128`, `activeArtifactId: UUID?`, `isLockedByDeploymentId: UUID?`, `version: int` | `activeArtifactId -> DevBuildArtifact.id`; `isLockedByDeploymentId -> DevDeploymentRecord.id`. | At most one active `DEPLOYING` / `VERIFYING` `DevDeploymentRecord` may hold `isLockedByDeploymentId` per environment at a time. |\n| **`DevDeploymentRecord`** | `id: UUID`, `environmentId: UUID`, `pipelineRunId: UUID`, `artifactId: UUID`, `previousArtifactId: UUID?`, `commitSha: string`, `linkedApmIssueIds: UUID[]`, `status: enum(PENDING_APPROVAL, QUEUED_LOCK, DEPLOYING, VERIFYING, SUCCEEDED, ROLLED_BACK, FAILED, REJECTED)`, `canaryWeightPct: int`, `approvedByUserId: UUID?`, `rollbackOfDeploymentId: UUID?`, `verificationMetricsJson: object`, `activeWorkItemId: UUID?`, `discussionChannelId: UUID?`, `startedAt: datetime`, `completedAt: datetime?`, `version: int` | `environmentId -> DevDeploymentEnvironment.id`; `artifactId, previousArtifactId -> DevBuildArtifact.id`; `linkedApmIssueIds -> ApmIssue.id[]`; `activeWorkItemId -> Platform WorkItem.id`; `discussionChannelId -> projectChannelMessage`. | Cannot enter `DEPLOYING` on a `PRODUCTION` environment during an active `freezeWindowsJson` window (without Incident Commander break-glass) or without non-author `approvedByUserId` when `blockCommitAuthorApproval: true`. |\n\n---\n\n## 5. Core End-to-End User Journeys (5 Journeys)\n\n1. **Journey 1 — PR Commit Trigger, Timing-Balanced Test Split & Flaky Test Detection:**\n   - Merging or pushing to a PR in `#101` triggers `DevPipelineRun` `#814`. `ci-cd` splits 600 Playwright tests across 4 `LINUX_ARM64` shards balanced by historical duration (`CICD-009`).\n   - One intermittent test fails on Shard 2 and passes on immediate `flakyAutoRerunMax: 1` retry (`CICD-008`). `DevPipelineRun` reports `PASSED` back to `#101` Merge Queue while badging that test `FLAKY` on `test-insights` and opening a quality Home `WorkItem`.\n2. **Journey 2 — Build Once, SLSA Provenance & Segregation-of-Duties `PRODUCTION` Approval:**\n   - Upon merge to `main`, `ci-cd` builds container `sha256:8f41...c209`, generates a signed SLSA provenance attestation (`DevBuildArtifact`), auto-deploys to `STAGING`, and passes `#103` API regression tests (`CICD-010`).\n   - Promoting the exact same `sha256:8f41...c209` digest to `PRODUCTION` (`CICD-015`) pauses in `PENDING_APPROVAL` and dispatches a Rapider Home `WorkItem` containing the AI Pre-Flight Risk Summary (`CICD-027`).\n   - Because `blockCommitAuthorApproval: true`, the commit author cannot approve; the designated SRE Lead approves the `WorkItem`, acquiring the environment concurrency lock.\n3. **Journey 3 — Canary Progressive Rollout, Post-Deploy Verification Breach & Instant Auto-Rollback:**\n   - `PRODUCTION` (`rolloutStrategy: 'CANARY'`) shifts `10%` traffic to `sha256:8f41...c209` (`VERIFYING`).\n   - During the 5-minute bake window, `#103` synthetic monitor error rate hits `3.80%` (exceeding `errorRateRollbackThresholdPct: 1.00%`).\n   - `ci-cd` automatically aborts the canary, restores `100%` traffic to `previousArtifactId` in `18 seconds`, marks status `ROLLED_BACK`, opens a high-priority SRE Home `WorkItem`, and posts metrics to the `projectChannelMessage` war room (`CICD-022`).\n4. **Journey 4 — Click-Through DAG Log Inspection, AI Root-Cause & Back-State Restoration:**\n   - On `pipeline-runs`, a developer filters by `Status: \"FAILED\"` (`#activeFilterTagsBar` displays `Status: \"FAILED\" ✕`), clicks Run `#819` to open `#/pipeline-run-detail?id=...`, inspects the failed `typecheck-and-build` node, and invokes the AI Root-Cause Analyzer (`CICD-025`), which cites missing type export in `src/billing/invoice.ts:44`. Clicking `\"Back to Runs\"` restores `Status: \"FAILED\"`.\n5. **Journey 5 — Fiscal Close Deployment Freeze Enforcement:**\n   - During `FIN` quarter-end blackout configured on `freeze-policies` (`CICD-023`), a standard feature deployment to `PRODUCTION` is deterministically held/rejected with clear freeze window details, protecting ledger close stability.\n\n---\n\n## 6. Consolidated Feature Priorities & Work Packages (`P0`, `P1`, `P2`)\n\n### `P0` Foundation Work Packages\n- **`WP-P0-1` DAG Pipelines, Matrix Builds & Secret-Redacted Logs (`CICD-001`, `CICD-002`, `CICD-003`):** Build `cicd-overview`, `pipelines`, `pipeline-runs`, and `pipeline-run-detail` with `#101` triggers, monorepo path filters, and streaming redacted job logs (`Developer` / `DevOps`).\n- **`WP-P0-2` Test Ingestion & Flaky Test Detection (`CICD-007`, `CICD-008`):** Build `test-insights` with JUnit/Playwright parsing, `FLAKY` auto-rerun, and quarantine `WorkItem`s (`QA / Developer`).\n- **`WP-P0-3` Immutable SLSA Artifacts, Keyless OIDC & Runner Pools (`CICD-012`, `CICD-013`, `CICD-014`):** Build `build-artifacts` and `runner-pools` with `sha256` digest provenance, OIDC/Vault secret injection, and `Decimal128` runner minute budgets (`Platform Engineer`).\n- **`WP-P0-4` Environments, Home `WorkItem` Prod Approvals & 1-Click Rollback (`CICD-018`, `CICD-019`, `CICD-020`):** Build `environments`, `deployments` (`<rapider-kanban>` + table), and `deployment-detail` with concurrency locks, SoD approvals, and instant digest rollback (`Release Approver` / `SRE`).\n\n### `P1` Scale & Enterprise Governance Work Packages\n- **`WP-P1-1` Reusable Orbs, Layer Caching, YAML Linter & Timing Split (`CICD-004`, `CICD-005`, `CICD-006`, `CICD-009`, `CICD-010`):** Build `pipeline-templates`, cache telemetry, historical parallel shard splitting, and native `#103`/`#098` gate steps (`DevOps Engineer`).\n- **`WP-P1-2` Digest Promotion, CVE Gates, PR Previews, Canary Auto-Rollback, Freezes & DORA (`CICD-015`, `CICD-016`, `CICD-017`, `CICD-021`, `CICD-022`, `CICD-023`, `CICD-024`):** Build `freeze-policies`, Canary/Blue-Green continuous verification rollback, ephemeral PR previews, and 4-key DORA `#096` exports (`SRE` / `Engineering Director`).\n\n### `P2` Adjacent & Grounded AI Work Packages\n- **`WP-P2-1` Test Impact Selection & AI Failure / Cost Advisors (`CICD-011`, `CICD-025`, `CICD-026`):** Diff-based fast test selection, grounded failed-log RCA over `projectChannelMessage`, and runner cost/caching optimization hints (`Developer` / `FinOps`).\n- **`WP-P2-2` Approver Risk Summaries & Release War-Room Threads (`CICD-027`, `CICD-028`):** Automated commit/migration risk digests on prod approval `WorkItem`s and per-release `projectChannelMessage` coordination threads (`Release Approver`).\n\n---\n\n## 7. Roles, Permissions & Field-Level Governance\n\n| Role | Permitted Actions | Restricted / Field-Level Boundaries |\n| :--- | :--- | :--- |\n| **`Pipeline Viewer`** | View `cicd-overview` DORA metrics, `pipeline-runs`, `test-insights`, `environments`, and redacted logs. | Cannot trigger deployments, cancel peer builds, or view OIDC/Vault binding identifiers. |\n| **`Software Engineer`** | Author `DevPipelineDefinition`s via PR, trigger feature/staging runs, inspect `pipeline-run-detail` logs & AI RCA, deploy to `DEV/QA/PREVIEW`. | Cannot deploy unapproved artifacts to `PRODUCTION`, cannot self-approve own commit to `PRODUCTION` when `blockCommitAuthorApproval: true`, and never sees raw secret values. |\n| **`Release Approver / Engineering Lead`** | Approve/reject `PRODUCTION` `DevDeploymentRecord` Home `WorkItem`s (for commits authored by others), trigger 1-click rollbacks. | Cannot bypass active `freezeWindowsJson` or `criticalCveCount > 0` blocks without `Incident Commander`. |\n| **`Platform / DevOps Engineer`** | Author `pipeline-templates` orbs, manage `DevRunnerPool` concurrency & `Decimal128` budgets, configure OIDC roles & `vaultSecretRefs`. | Cannot read secret values back out of Platform Vault; all runner pool & OIDC edits are audit-logged. |\n| **`SRE / Incident Commander`** | Execute emergency break-glass deployments during freeze windows (with mandatory incident justification), abort/rollback live canaries, lock environments. | Every break-glass action writes an immutable SOX/SOC 2 compliance alert. |\n\n---\n\n## 8. Technical APIs, Guarded Commands, Events & `requiredWorkflows`\n\n### Guarded Commands\n1. `dev.cicd.triggerPipelineRun({ pipelineId, commitSha, branchOrTag, parameters, idempotencyKey, correlationId })` — Evaluates monorepo path globs, checks `DevRunnerPool` budget state, and schedules DAG execution.\n2. `dev.cicd.promoteArtifactToEnvironment({ artifactId, environmentId, idempotencyKey, correlationId })` — Validates branch restrictions, `criticalCveCount === 0`, and freeze windows; either opens an Approval Home `WorkItem` (`PENDING_APPROVAL`) or acquires environment lock (`DEPLOYING`).\n3. `dev.cicd.decideDeploymentApproval({ deploymentId, decision: 'APPROVE' | 'REJECT', notes, expectedVersion, idempotencyKey, correlationId })` — Enforces `approverId !== commitAuthorId` when `blockCommitAuthorApproval: true` and resolves the Home `WorkItem`.\n4. `dev.cicd.rollbackDeployment({ environmentId, targetArtifactId, reason, idempotencyKey, correlationId })` — Preempts failed/degraded rollout and re-deploys `previousArtifactId` immutable digest immediately.\n\n### Domain Events Published & Consumed (Kafka)\n- **Published:** `dev.cicd.pipeline_run.completed.v1` (consumed by `#101` PR/Merge Queue), `dev.cicd.artifact.attested.v1`, `dev.cicd.deployment.succeeded.v1` (consumed by `#097` & `APM`), `dev.cicd.deployment.rolled_back.v1`, `dev.cicd.dora_metrics.updated.v1`.\n- **Consumed:** `dev.scm.push.accepted.v1`, `dev.scm.pull_request.opened.v1`, `dev.scm.merge_queue.batch_ready.v1`, `dev.scm.release.published.v1` (all from `#101`), `dev.api.monitor.breached.v1` (from `#103` for Canary auto-rollback).\n\n### `requiredWorkflows`\n- `cicdDagExecutionOrchestratorWorkflow` — Fan-out/fan-in stage scheduler, shard splitter, flaky single-rerun handler, and SLSA provenance generator.\n- `cicdProductionApprovalWorkflow` — Routes `PRODUCTION` promotions through Segregation-of-Duties Home `WorkItem`s.\n- `cicdProgressiveCanaryVerificationWorkflow` — Steps canary weights (`10% -> 50% -> 100%`), polls `#103`/`#097` health signals, and triggers auto-rollback on threshold breach.\n\n### Grounded Rapider AI Governance Rules\n- AI Failure RCA (`CICD-025`) operates exclusively on secret-redacted job logs (`redactedLogFileId`), cites exact log line numbers and commit SHAs, and **NEVER** triggers `PRODUCTION` promotions, rollbacks, or freeze overrides without explicit human execution.\n\n---\n\n## 9. Security, Privacy, Compliance & Non-Functional Requirements\n\n- **Supply-Chain & SOX/SOC 2 Compliance (SLSA / NIST SSDF):** Enforces keyless OIDC authentication, immutable `sha256` artifact promotion (`build once, deploy anywhere`), Segregation-of-Duties production approvals, and tamper-evident SLSA provenance records retained for 7 years.\n- **Strict Secret Redaction & Cloud Run Best Practices:** Job logs strip any dynamic vault value (including base64/URL-encoded variants) prior to disk write; built-in Cloud Run deployment templates configure direct `.run.app` URLs and `ingress: all` for public APIs to avoid custom domain SSL and internal ingress misconfigurations.\n- **Precision & Host Tenancy:** `Decimal128` used for `computeCreditsUsed`, `monthlyCreditBudget`, and `errorRateRollbackThresholdPct`; zero `projectId` fields in any model.\n- **Accessibility & Responsive UX:** `<rapider-kanban>` on `deployments` stays 100% synchronized with its table view; ANSI terminal log viewer supports high-contrast light/dark themes and keyboard line navigation; `#ffffff !important` white text enforced on all primary/danger buttons across `390px`, `768px`, and `1440px`.\n\n---\n\n## 10. Deterministic Acceptance Criteria (14 Testable Criteria)\n\n1. **AC-01 (Sidebar Minimum-3 Rule):** Visible sidebar sections (`Pipelines & Builds`: 4 items, `Quality & Artifacts`: 3 items, `Deployments & Releases`: 3 items) each contain `>= 3` `displayOnMenu: true` pages; `pipeline-run-detail`, `deployment-detail`, and `pipeline-env-drawer` set `displayOnMenu: false`.\n2. **AC-02 (Rapider Kanban & Multi-View Sync):** `deployments` renders `<rapider-kanban>` synchronized with its table view; approving or rolling back a `DevDeploymentRecord` updates both views optimistically without reload.\n3. **AC-03 (SWR Clean Queries & Defensive Soft-Delete):** All 10 sidebar routes load via `findSWR`/`countSWR` without client `isDeleted` where-clauses and apply in-memory `item.isDeleted !== true` filtering.\n4. **AC-04 (Table Actions & Click-Through Navigation):** Zero `\"View\"` buttons exist in `Actions` columns; clicking a run on `pipeline-runs` navigates to `#/pipeline-run-detail?id=...` and clicking a deployment on `deployments` navigates to `#/deployment-detail?id=...` without `<base href>` 404 diversion; `Edit` uses icon+text and `Delete` uses an icon-only button with `#rapiderConfirmOkBtn` modal confirmation.\n5. **AC-05 (Active Filter Tags & Clear All):** Filtering `pipeline-runs`, `test-insights`, or `deployments` displays `#activeFilterTagsBar` with HTML-escaped dismissible chips and `[Clear all]`.\n6. **AC-06 (Drawer Lifecycle & `finally` Reset):** Saving or cancelling in `pipeline-env-drawer` restores button state inside `finally`, clears SWR caches, updates parent views optimistically, and closes the drawer via `closePageDrawer()`.\n7. **AC-07 (Zero-Secret YAML & Log Masking):** Saving a `DevPipelineDefinition` containing hardcoded credentials fails validation (`422`), and any secret injected via `vaultSecretRefs` echoed during a job is scrubbed to `***REDACTED***` in `redactedLogFileId`.\n8. **AC-08 (Exclusive Environment Concurrency Lock):** Promoting two deployments simultaneously to the same `DevDeploymentEnvironment` grants `isLockedByDeploymentId` to the first (`DEPLOYING`) and deterministically queues the second (`QUEUED_LOCK`) without parallel overwrite corruption.\n9. **AC-09 (Segregation-of-Duties Prod Approval Gate):** When `blockCommitAuthorApproval === true` on `PRODUCTION`, an approval attempt by the commit author fails with `403 Self-Approval Prohibited`, while an authorized Release Approver transitions status to `DEPLOYING` and closes the Home `WorkItem`.\n10. **AC-10 (Deployment Freeze Window Enforcement):** Standard `promoteArtifactToEnvironment` calls targeting `PRODUCTION` during an active `freezeWindowsJson` window are deterministically blocked (`409 Active Deployment Freeze`) unless accompanied by an audited Incident Commander break-glass token.\n11. **AC-11 (Canary Continuous Verification Auto-Rollback):** When post-deploy verification error rate exceeds `Decimal128` `errorRateRollbackThresholdPct`, `cicdProgressiveCanaryVerificationWorkflow` automatically transitions the deployment to `ROLLED_BACK`, restores `previousArtifactId`, and opens an SRE Home `WorkItem`.\n12. **AC-12 (Flaky Test Auto-Tagging):** A test case that fails and then passes on the exact same `commitSha` within `flakyAutoRerunMax` is automatically flagged `FLAKY` on `test-insights`.\n13. **AC-13 (Back Navigation Filter Preservation):** Navigating from `pipeline-runs` (filtered by `Status: \"FAILED\"`) into `pipeline-run-detail` and clicking `#btnGoBack` restores `pipeline-runs` with `Status: \"FAILED\"` intact.\n14. **AC-14 (Theme & Contrast Compliance):** All routes pass light/dark `validate_theme` checks with `#ffffff !important` white text on primary/danger buttons and zero `window.alert`/`confirm`/`prompt` dialogs.\n",
+  "thumbnailUrl": "",
+  "isolationScope": "ENTERPRISE_SHARED",
+  "dataModels": [
+    {
+      "name": "ApmIssue",
+      "title": "Issue",
+      "description": "An actionable item such as a bug, feature, or task.",
+      "domainName": "Rapider Project & Portfolio Suite",
+      "domainKey": "APM",
+      "datatableName": "ApmIssue",
+      "dataTableName": "ApmIssue",
+      "sqlTableName": "apm_issue",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ title }} - {{ status }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "title",
+          "description"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "title",
+            "projectId",
+            "type"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "description",
+            "status"
+          ],
+          "additionalPrompt": "If the issue type is 'Bug', ensure a description is provided detailing the steps to reproduce.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Priority must be one of: Low, Medium, High, Critical."
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "projectId"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "When updating status to 'Done', ensure all required fields are filled.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Cannot change type from Bug to Feature without user confirmation.",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify closed issues.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 25,
+          "defaultContextLimit": 15,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": "Group issues by status and priority when summarizing."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete issues that are currently In Progress.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "projectId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "epicId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "sprintId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "priority",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "storyPoints",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "labelIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "assigneeId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "reporterId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "project",
+          "type": "belongsTo",
+          "sourceModel": "ApmIssue",
+          "sourceField": "projectId",
+          "targetModel": "ApmProject",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The project this issue belongs to."
+        },
+        {
+          "name": "epic",
+          "type": "belongsTo",
+          "sourceModel": "ApmIssue",
+          "sourceField": "epicId",
+          "targetModel": "ApmEpic",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The epic this issue belongs to."
+        },
+        {
+          "name": "sprint",
+          "type": "belongsTo",
+          "sourceModel": "ApmIssue",
+          "sourceField": "sprintId",
+          "targetModel": "ApmSprint",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The sprint this issue is assigned to."
+        },
+        {
+          "name": "labels",
+          "type": "referencesMany",
+          "sourceModel": "ApmIssue",
+          "sourceField": "labelIds",
+          "targetModel": "ApmLabel",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "Labels categorized for this issue."
+        }
+      ]
+    },
+    {
+      "name": "ApmProject",
+      "title": "Project",
+      "description": "Represents a high-level initiative or body of work containing epics, sprints, and issues.",
+      "domainName": "Rapider Project & Portfolio Suite",
+      "domainKey": "APM",
+      "datatableName": "ApmProject",
+      "dataTableName": "ApmProject",
+      "sqlTableName": "apm_project",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "description"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "name"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "description"
+          ],
+          "additionalPrompt": "When creating a project, ensure the name is concise and professional.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "Project name must be unique."
+        },
+        "entityItemUpdate": {
+          "immutableFields": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "Do not change the project name unless explicitly requested.",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Ensure status transitions make logical sense.",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify archived projects.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 10,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": "Summarize project progress by counting related open vs closed issues if possible."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "epics",
+            "sprints",
+            "issues"
+          ],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete active projects.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "epics",
+          "type": "hasMany",
+          "sourceModel": "ApmProject",
+          "sourceField": "id",
+          "targetModel": "ApmEpic",
+          "targetField": "projectId",
+          "throughModel": null,
+          "description": "A project can have multiple epics."
+        },
+        {
+          "name": "sprints",
+          "type": "hasMany",
+          "sourceModel": "ApmProject",
+          "sourceField": "id",
+          "targetModel": "ApmSprint",
+          "targetField": "projectId",
+          "throughModel": null,
+          "description": "A project can have multiple sprints."
+        },
+        {
+          "name": "issues",
+          "type": "hasMany",
+          "sourceModel": "ApmProject",
+          "sourceField": "id",
+          "targetModel": "ApmIssue",
+          "targetField": "projectId",
+          "throughModel": null,
+          "description": "A project contains multiple issues."
+        }
+      ]
+    },
+    {
+      "name": "DatDashboard",
+      "title": "Dashboard",
+      "description": "Deleting a dashboard soft-deletes child tiles and disables active `DatReportSubscription`s atomically.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatDashboard",
+      "dataTableName": "DatDashboard",
+      "sqlTableName": "dat_dashboard",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ title }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "title",
+          "description",
+          "slug"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Dashboard, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "collectionName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "globalFiltersSchemaJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "whatIfParametersJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "certificationStatus",
+          "type": "string",
+          "description": "Allowed values: DRAFT, PROMOTED, CERTIFIED, ARCHIVED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ],
+          "options": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ]
+        },
+        {
+          "name": "starterPackKey",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "viewCount90d",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "DatTrackedEvent",
+      "title": "Tracked Event",
+      "description": "Append-only immutable telemetry record (except statutory GDPR subject erasure tombstoning). Deduplicated on `(sourceId, idempotencyKey)`. `revenueAmount` uses `Decimal128`.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatTrackedEvent",
+      "dataTableName": "DatTrackedEvent",
+      "sqlTableName": "dat_tracked_event",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Tracked Event, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "sourceId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "eventName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "distinctUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "anonymousId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crmAccountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crmContactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "occurredAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ingestedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "propertiesJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "revenueAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currencyCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "frictionFlags",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "idempotencyKey",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "source",
+          "type": "belongsTo",
+          "sourceModel": "DatTrackedEvent",
+          "sourceField": "sourceId",
+          "targetModel": "DatTelemetrySource",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatTrackedEvent source foreign key link to DatTelemetrySource."
+        }
+      ]
+    },
+    {
+      "name": "DevBranchRule",
+      "title": "Branch Rule",
+      "description": "Repository-level rules can tighten (`minApprovals >= inherited`) but NEVER weaken an active `WORKSPACE_INHERITED` `DevBranchRule`.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevBranchRule",
+      "dataTableName": "DevBranchRule",
+      "sqlTableName": "dev_branch_rule",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Branch Rule, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "repositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "scopeLevel",
+          "type": "string",
+          "description": "Allowed values: WORKSPACE_INHERITED, REPOSITORY",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "WORKSPACE_INHERITED",
+            "REPOSITORY"
+          ],
+          "options": [
+            "WORKSPACE_INHERITED",
+            "REPOSITORY"
+          ]
+        },
+        {
+          "name": "branchPattern",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "minApprovals",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "blockAuthorSelfApproval",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "dismissStaleReviewsOnPush",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "requireCodeOwnersReview",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "codeOwnersRulesJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "requiredStatusChecks",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "requireLinkedApmIssue",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "requireSignedCommits",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "blockForcePush",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "repository",
+          "type": "belongsTo",
+          "sourceModel": "DevBranchRule",
+          "sourceField": "repositoryId",
+          "targetModel": "DevRepository",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevBranchRule repository foreign key link to DevRepository."
+        }
+      ]
+    },
+    {
+      "name": "DevPullRequest",
+      "title": "Pull Request",
+      "description": "`(repositoryId, prNumber)` monotonically increasing & unique. Transition to `MERGED` or `QUEUED` is deterministically blocked unless all matching `DevBranchRule` invariants pass (`approvedByUserIds` excluding `authorUserId` when `blockAuthorSelfApproval: true`, `unresolvedThreadCount === 0`, `checksStatus === 'PASSED'`, and `linkedApmIssueIds.length >= 1` when required).",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevPullRequest",
+      "dataTableName": "DevPullRequest",
+      "sqlTableName": "dev_pull_request",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ title }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "title"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Pull Request, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "repositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "prNumber",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "descriptionMarkdown",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "sourceBranch",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "targetBranch",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "headCommitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "baseCommitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: DRAFT, OPEN, QUEUED, MERGED, CLOSED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DRAFT",
+            "OPEN",
+            "QUEUED",
+            "MERGED",
+            "CLOSED"
+          ],
+          "options": [
+            "DRAFT",
+            "OPEN",
+            "QUEUED",
+            "MERGED",
+            "CLOSED"
+          ]
+        },
+        {
+          "name": "riskLevel",
+          "type": "string",
+          "description": "Allowed values: LOW, MEDIUM, HIGH",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ],
+          "options": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ]
+        },
+        {
+          "name": "authorUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "requiredReviewerIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "approvedByUserIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "unresolvedThreadCount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "checksStatus",
+          "type": "string",
+          "description": "Allowed values: PENDING, PASSED, FAILED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PENDING",
+            "PASSED",
+            "FAILED"
+          ],
+          "options": [
+            "PENDING",
+            "PASSED",
+            "FAILED"
+          ]
+        },
+        {
+          "name": "linkedApmIssueIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "mergeQueuePosition",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "mergedByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "mergedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeWorkItemIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "repository",
+          "type": "belongsTo",
+          "sourceModel": "DevPullRequest",
+          "sourceField": "repositoryId",
+          "targetModel": "DevRepository",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevPullRequest repository foreign key link to DevRepository."
+        }
+      ]
+    },
+    {
+      "name": "DevReleaseTag",
+      "title": "Release Tag",
+      "description": "`(repositoryId, tagName)` immutable once published (cannot repoint a published release tag SHA without creating a new `SemVer` patch tag).",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevReleaseTag",
+      "dataTableName": "DevReleaseTag",
+      "sqlTableName": "dev_release_tag",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ title }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "title"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Release Tag, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "repositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "tagName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "targetCommitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "changelogMarkdown",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isPrerelease",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "assetFileIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "assetChecksumsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "publishedByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "publishedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "repository",
+          "type": "belongsTo",
+          "sourceModel": "DevReleaseTag",
+          "sourceField": "repositoryId",
+          "targetModel": "DevRepository",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevReleaseTag repository foreign key link to DevRepository."
+        }
+      ]
+    },
+    {
+      "name": "DevRepository",
+      "title": "Repository",
+      "description": "`slug` unique per workspace. `ARCHIVED` repositories become strictly read-only (pushes, PR merges, and rule deletions rejected).",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevRepository",
+      "dataTableName": "DevRepository",
+      "sqlTableName": "dev_repository",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "description",
+          "slug"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Repository, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "visibility",
+          "type": "string",
+          "description": "Allowed values: PRIVATE, INTERNAL",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PRIVATE",
+            "INTERNAL"
+          ],
+          "options": [
+            "PRIVATE",
+            "INTERNAL"
+          ]
+        },
+        {
+          "name": "defaultBranch",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isTemplate",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "templateRepoId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "allowedMergeStrategies",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "enableMergeQueue",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "secretPushProtection",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "mirrorVaultSecretRef",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "storageUsedMb",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "apmProjectId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerDepartmentId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: ACTIVE, ARCHIVED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ACTIVE",
+            "ARCHIVED"
+          ],
+          "options": [
+            "ACTIVE",
+            "ARCHIVED"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "gitRepoRef",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "newCodeHorizonType",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "repoName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "providerType",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "apmProject",
+          "type": "belongsTo",
+          "sourceModel": "DevRepository",
+          "sourceField": "apmProjectId",
+          "targetModel": "ApmProject",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevRepository apmProject foreign key link to ApmProject."
+        }
+      ]
+    },
+    {
+      "name": "DevPipelineDefinition",
+      "title": "Pipeline Definition",
+      "description": "**Zero-secret invariant:** `yamlSpec` is validated on save to reject inline secrets/tokens (`vaultSecretRefs` and keyless `oidcCloudRoleArnOrUri` only). Cloud Run deploy templates enforce direct `.run.app` URLs and `ingress: all` when configured as public APIs.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevPipelineDefinition",
+      "dataTableName": "DevPipelineDefinition",
+      "sqlTableName": "dev_pipeline_definition",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Pipeline Definition, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "repositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "yamlSpec",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "templateOrbCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "triggers",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "monorepoPathGlobs",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "defaultRunnerPoolId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "oidcCloudRoleArnOrUri",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "vaultSecretRefs",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "flakyAutoRerunMax",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "repository",
+          "type": "belongsTo",
+          "sourceModel": "DevPipelineDefinition",
+          "sourceField": "repositoryId",
+          "targetModel": "DevRepository",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevPipelineDefinition repository foreign key link to DevRepository."
+        }
+      ]
+    },
+    {
+      "name": "DevPipelineRun",
+      "title": "Pipeline Run",
+      "description": "`(pipelineId, runNumber)` monotonically increasing. Terminal states (`PASSED`, `FAILED`, `CANCELED`, `TIMED_OUT`) are immutable; re-running creates a linked new attempt record.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevPipelineRun",
+      "dataTableName": "DevPipelineRun",
+      "sqlTableName": "dev_pipeline_run",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Pipeline Run, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "pipelineId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "runNumber",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "repositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "commitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "branchOrTag",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "pullRequestId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "triggerType",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "triggeredByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: QUEUED, RUNNING, AWAITING_APPROVAL, PASSED, FAILED, CANCELED, TIMED_OUT",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "QUEUED",
+            "RUNNING",
+            "AWAITING_APPROVAL",
+            "PASSED",
+            "FAILED",
+            "CANCELED",
+            "TIMED_OUT"
+          ],
+          "options": [
+            "QUEUED",
+            "RUNNING",
+            "AWAITING_APPROVAL",
+            "PASSED",
+            "FAILED",
+            "CANCELED",
+            "TIMED_OUT"
+          ]
+        },
+        {
+          "name": "startedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "completedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "durationSeconds",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "computeCreditsUsed",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "flakyTestsDetectedCount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "idempotencyKey",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "pipeline",
+          "type": "belongsTo",
+          "sourceModel": "DevPipelineRun",
+          "sourceField": "pipelineId",
+          "targetModel": "DevPipelineDefinition",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevPipelineRun pipeline foreign key link to DevPipelineDefinition."
+        }
+      ]
+    },
+    {
+      "name": "DevPipelineStageJob",
+      "title": "Pipeline Stage Job",
+      "description": "Console logs written to `redactedLogFileId` pass through synchronous multi-pattern + vault-value secret redaction (`***REDACTED***`).",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevPipelineStageJob",
+      "dataTableName": "DevPipelineStageJob",
+      "sqlTableName": "dev_pipeline_stage_job",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Pipeline Stage Job, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "pipelineRunId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "stageName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "jobName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "shardIndex",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "shardTotal",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "dependsOnJobNames",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "runnerPoolId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: PENDING, RUNNING, PASSED, FAILED, SKIPPED, CANCELED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PENDING",
+            "RUNNING",
+            "PASSED",
+            "FAILED",
+            "SKIPPED",
+            "CANCELED"
+          ],
+          "options": [
+            "PENDING",
+            "RUNNING",
+            "PASSED",
+            "FAILED",
+            "SKIPPED",
+            "CANCELED"
+          ]
+        },
+        {
+          "name": "exitCode",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "cacheHit",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "testSummaryJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "redactedLogFileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "durationMs",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "pipelineRun",
+          "type": "belongsTo",
+          "sourceModel": "DevPipelineStageJob",
+          "sourceField": "pipelineRunId",
+          "targetModel": "DevPipelineRun",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevPipelineStageJob pipelineRun foreign key link to DevPipelineRun."
+        }
+      ]
+    },
+    {
+      "name": "DevBuildArtifact",
+      "title": "Build Artifact",
+      "description": "`immutableDigestSha256` and `slsaProvenanceJson` are write-once immutable; `PRODUCTION` deployments reject artifacts where `criticalCveCount > 0` unless break-glass approved.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevBuildArtifact",
+      "dataTableName": "DevBuildArtifact",
+      "sqlTableName": "dev_build_artifact",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Build Artifact, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "pipelineRunId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "repositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "commitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "artifactName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "artifactType",
+          "type": "string",
+          "description": "Allowed values: CONTAINER_IMAGE, WEB_BUNDLE, BINARY_PACKAGE, SBOM_ATTESTATION, TEST_REPORT",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "CONTAINER_IMAGE",
+            "WEB_BUNDLE",
+            "BINARY_PACKAGE",
+            "SBOM_ATTESTATION",
+            "TEST_REPORT"
+          ],
+          "options": [
+            "CONTAINER_IMAGE",
+            "WEB_BUNDLE",
+            "BINARY_PACKAGE",
+            "SBOM_ATTESTATION",
+            "TEST_REPORT"
+          ]
+        },
+        {
+          "name": "immutableDigestSha256",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "storageUriOrFileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "sizeBytes",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "slsaProvenanceJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "criticalCveCount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "retentionExpiresAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "pipelineRun",
+          "type": "belongsTo",
+          "sourceModel": "DevBuildArtifact",
+          "sourceField": "pipelineRunId",
+          "targetModel": "DevPipelineRun",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevBuildArtifact pipelineRun foreign key link to DevPipelineRun."
+        }
+      ]
+    },
+    {
+      "name": "DevRunnerPool",
+      "title": "Runner Pool",
+      "description": "All credit rates and monthly caps use `Decimal128`. Crossing `90%` of `monthlyCreditBudget` opens a FinOps Home `WorkItem`.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevRunnerPool",
+      "dataTableName": "DevRunnerPool",
+      "sqlTableName": "dev_runner_pool",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Runner Pool, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "poolMode",
+          "type": "string",
+          "description": "Allowed values: MANAGED_CLOUD, SELF_HOSTED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "MANAGED_CLOUD",
+            "SELF_HOSTED"
+          ],
+          "options": [
+            "MANAGED_CLOUD",
+            "SELF_HOSTED"
+          ]
+        },
+        {
+          "name": "archType",
+          "type": "string",
+          "description": "Allowed values: LINUX_X64, LINUX_ARM64, MACOS_ARM64, GPU_LINUX",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "LINUX_X64",
+            "LINUX_ARM64",
+            "MACOS_ARM64",
+            "GPU_LINUX"
+          ],
+          "options": [
+            "LINUX_X64",
+            "LINUX_ARM64",
+            "MACOS_ARM64",
+            "GPU_LINUX"
+          ]
+        },
+        {
+          "name": "maxConcurrency",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeJobsCount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "creditRatePerMin",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "monthlyCreditBudget",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "creditsUsedMonth",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: ONLINE, DEGRADED, DRAINING, PAUSED_BUDGET",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ONLINE",
+            "DEGRADED",
+            "DRAINING",
+            "PAUSED_BUDGET"
+          ],
+          "options": [
+            "ONLINE",
+            "DEGRADED",
+            "DRAINING",
+            "PAUSED_BUDGET"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "DevDeploymentEnvironment",
+      "title": "Deployment Environment",
+      "description": "At most one active `DEPLOYING` / `VERIFYING` `DevDeploymentRecord` may hold `isLockedByDeploymentId` per environment at a time.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevDeploymentEnvironment",
+      "dataTableName": "DevDeploymentEnvironment",
+      "sqlTableName": "dev_deployment_environment",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Deployment Environment, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "tier",
+          "type": "string",
+          "description": "Allowed values: DEV, QA, PREVIEW, STAGING, PRODUCTION",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DEV",
+            "QA",
+            "PREVIEW",
+            "STAGING",
+            "PRODUCTION"
+          ],
+          "options": [
+            "DEV",
+            "QA",
+            "PREVIEW",
+            "STAGING",
+            "PRODUCTION"
+          ]
+        },
+        {
+          "name": "rolloutStrategy",
+          "type": "string",
+          "description": "Allowed values: ROLLING, BLUE_GREEN, CANARY",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ROLLING",
+            "BLUE_GREEN",
+            "CANARY"
+          ],
+          "options": [
+            "ROLLING",
+            "BLUE_GREEN",
+            "CANARY"
+          ]
+        },
+        {
+          "name": "allowedBranchGlobs",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "requireApproval",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "approverUserIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "blockCommitAuthorApproval",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "freezeWindowsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "errorRateRollbackThresholdPct",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeArtifactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isLockedByDeploymentId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "activeArtifact",
+          "type": "belongsTo",
+          "sourceModel": "DevDeploymentEnvironment",
+          "sourceField": "activeArtifactId",
+          "targetModel": "DevBuildArtifact",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevDeploymentEnvironment activeArtifact foreign key link to DevBuildArtifact."
+        }
+      ]
+    },
+    {
+      "name": "DevDeploymentRecord",
+      "title": "Deployment Record",
+      "description": "Cannot enter `DEPLOYING` on a `PRODUCTION` environment during an active `freezeWindowsJson` window (without Incident Commander break-glass) or without non-author `approvedByUserId` when `blockCommitAuthorApproval: true`.",
+      "domainName": "Rapider Developer Suite",
+      "domainKey": "DEV",
+      "datatableName": "DevDeploymentRecord",
+      "dataTableName": "DevDeploymentRecord",
+      "sqlTableName": "dev_deployment_record",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Deployment Record, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "environmentId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "pipelineRunId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "artifactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "previousArtifactId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "commitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "linkedApmIssueIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: PENDING_APPROVAL, QUEUED_LOCK, DEPLOYING, VERIFYING, SUCCEEDED, ROLLED_BACK, FAILED, REJECTED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PENDING_APPROVAL",
+            "QUEUED_LOCK",
+            "DEPLOYING",
+            "VERIFYING",
+            "SUCCEEDED",
+            "ROLLED_BACK",
+            "FAILED",
+            "REJECTED"
+          ],
+          "options": [
+            "PENDING_APPROVAL",
+            "QUEUED_LOCK",
+            "DEPLOYING",
+            "VERIFYING",
+            "SUCCEEDED",
+            "ROLLED_BACK",
+            "FAILED",
+            "REJECTED"
+          ]
+        },
+        {
+          "name": "canaryWeightPct",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "approvedByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "rollbackOfDeploymentId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "verificationMetricsJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeWorkItemId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "startedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "completedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "environment",
+          "type": "belongsTo",
+          "sourceModel": "DevDeploymentRecord",
+          "sourceField": "environmentId",
+          "targetModel": "DevDeploymentEnvironment",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DevDeploymentRecord environment foreign key link to DevDeploymentEnvironment."
+        }
+      ]
+    }
+  ],
+  "webPages": [
+    {
+      "name": "Delivery & DORA Hub",
+      "route": "cicd-overview",
+      "htmlFilePath": "pages/cicd-overview/cicd-overview.html",
+      "title": "Delivery & DORA Hub",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 1,
+      "developmentDetails": "4-Key DORA scorecard (Deploy Frequency, Lead Time, CFR, MTTR), active build queue, runner minute burn (Decimal128), #activeFilterTagsBar."
+    },
+    {
+      "name": "Pipeline Definitions",
+      "route": "pipelines",
+      "htmlFilePath": "pages/pipelines/pipelines.html",
+      "title": "Pipeline Definitions",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 2,
+      "developmentDetails": "findSWR directory of DevPipelineDefinitions with repo filter, pass-rate sparkline, clickable pipeline name, Run Pipeline trigger, icon+text Edit, icon-only Delete."
+    },
+    {
+      "name": "Build & Run Ledger",
+      "route": "pipeline-runs",
+      "htmlFilePath": "pages/pipeline-runs/pipeline-runs.html",
+      "title": "Build & Run Ledger",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 3,
+      "developmentDetails": "Cross-repo DevPipelineRun history (RUNNING, PASSED, FAILED, CANCELED, AWAITING_APPROVAL), #activeFilterTagsBar + Clear all, commit SHA & PR links."
+    },
+    {
+      "name": "Reusable Orbs & Templates",
+      "route": "pipeline-templates",
+      "htmlFilePath": "pages/pipeline-templates/pipeline-templates.html",
+      "title": "Reusable Orbs & Templates",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 4,
+      "developmentDetails": "Versioned library of standardized CI/CD workflow templates (Microapp QA, Container SLSA, Cloud Run .run.app deploy, #098 dbt runner)."
+    },
+    {
+      "name": "Smarter Test & Flake Insights",
+      "route": "test-insights",
+      "htmlFilePath": "pages/test-insights/test-insights.html",
+      "title": "Smarter Test & Flake Insights",
+      "group": "Quality & Artifacts",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 5,
+      "developmentDetails": "Slowest tests, highest failure rates, FLAKY test registry with auto-quarantine status and linked remediation Home WorkItems."
+    },
+    {
+      "name": "Artifacts & SLSA Provenance",
+      "route": "build-artifacts",
+      "htmlFilePath": "pages/build-artifacts/build-artifacts.html",
+      "title": "Artifacts & SLSA Provenance",
+      "group": "Quality & Artifacts",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 6,
+      "developmentDetails": "DevBuildArtifact registry showing immutable sha256 digest, SLSA attestation badge, CVE scan status, and promoted environments (STAGING, PROD)."
+    },
+    {
+      "name": "Runner Pools & Compute FinOps",
+      "route": "runner-pools",
+      "htmlFilePath": "pages/runner-pools/runner-pools.html",
+      "title": "Runner Pools & Compute FinOps",
+      "group": "Quality & Artifacts",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 7,
+      "developmentDetails": "DevRunnerPool fleet monitor (LINUX_X64, ARM64, MACOS, GPU), live concurrency utilization, queue latency, and Decimal128 minute budget caps."
+    },
+    {
+      "name": "Deployment Environments",
+      "route": "environments",
+      "htmlFilePath": "pages/environments/environments.html",
+      "title": "Deployment Environments",
+      "group": "Deployments & Releases",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 8,
+      "developmentDetails": "Live environment board (DEV, QA, PREVIEW, STAGING, PRODUCTION) displaying active artifact version, health status, lock state, and freeze banner."
+    },
+    {
+      "name": "Releases & Rollbacks",
+      "route": "deployments",
+      "htmlFilePath": "pages/deployments/deployments.html",
+      "title": "Releases & Rollbacks",
+      "group": "Deployments & Releases",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 9,
+      "developmentDetails": "DevDeploymentRecord kanban + table (<rapider-kanban> + table) across PENDING_APPROVAL -> DEPLOYING -> VERIFYING -> SUCCEEDED / ROLLED_BACK with 1-Click Rollback."
+    },
+    {
+      "name": "Freeze Windows & Release Gates",
+      "route": "freeze-policies",
+      "htmlFilePath": "pages/freeze-policies/freeze-policies.html",
+      "title": "Freeze Windows & Release Gates",
+      "group": "Deployments & Releases",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 10,
+      "developmentDetails": "Blackout calendar (DevDeploymentEnvironment freeze schedules), Segregation-of-Duties approver rules, and Continuous Verification rollback thresholds."
+    },
+    {
+      "name": "DAG Graph, Logs & AI RCA",
+      "route": "pipeline-run-detail",
+      "htmlFilePath": "pages/pipeline-run-detail/pipeline-run-detail.html",
+      "title": "DAG Graph, Logs & AI RCA",
+      "group": "(Hidden)",
+      "icon": "fas fa-code",
+      "displayInMenu": false,
+      "order": 11,
+      "developmentDetails": "Interactive fan-out/fan-in stage DAG (#/pipeline-run-detail?id=...), streaming DevPipelineStageJob ANSI log console, JUnit failures tab, AI Root-Cause drawer, and Back to Runs."
+    },
+    {
+      "name": "Progressive Rollout & War-Room",
+      "route": "deployment-detail",
+      "htmlFilePath": "pages/deployment-detail/deployment-detail.html",
+      "title": "Progressive Rollout & War-Room",
+      "group": "(Hidden)",
+      "icon": "fas fa-code",
+      "displayInMenu": false,
+      "order": 12,
+      "developmentDetails": "Canary traffic weight progression (10% -> 50% -> 100%), live #103/#097 health verification chart, projectChannelMessage release war room, plus sliding pipeline-env-drawer (displayOnMenu: false)."
+    }
+  ],
+  "workflows": [],
+  "variables": [],
+  "tools": [],
+  "pages": [
+    {
+      "name": "Delivery & DORA Hub",
+      "route": "cicd-overview",
+      "htmlFilePath": "pages/cicd-overview/cicd-overview.html",
+      "title": "Delivery & DORA Hub",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 1,
+      "developmentDetails": "4-Key DORA scorecard (Deploy Frequency, Lead Time, CFR, MTTR), active build queue, runner minute burn (Decimal128), #activeFilterTagsBar."
+    },
+    {
+      "name": "Pipeline Definitions",
+      "route": "pipelines",
+      "htmlFilePath": "pages/pipelines/pipelines.html",
+      "title": "Pipeline Definitions",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 2,
+      "developmentDetails": "findSWR directory of DevPipelineDefinitions with repo filter, pass-rate sparkline, clickable pipeline name, Run Pipeline trigger, icon+text Edit, icon-only Delete."
+    },
+    {
+      "name": "Build & Run Ledger",
+      "route": "pipeline-runs",
+      "htmlFilePath": "pages/pipeline-runs/pipeline-runs.html",
+      "title": "Build & Run Ledger",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 3,
+      "developmentDetails": "Cross-repo DevPipelineRun history (RUNNING, PASSED, FAILED, CANCELED, AWAITING_APPROVAL), #activeFilterTagsBar + Clear all, commit SHA & PR links."
+    },
+    {
+      "name": "Reusable Orbs & Templates",
+      "route": "pipeline-templates",
+      "htmlFilePath": "pages/pipeline-templates/pipeline-templates.html",
+      "title": "Reusable Orbs & Templates",
+      "group": "Pipelines & Builds",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 4,
+      "developmentDetails": "Versioned library of standardized CI/CD workflow templates (Microapp QA, Container SLSA, Cloud Run .run.app deploy, #098 dbt runner)."
+    },
+    {
+      "name": "Smarter Test & Flake Insights",
+      "route": "test-insights",
+      "htmlFilePath": "pages/test-insights/test-insights.html",
+      "title": "Smarter Test & Flake Insights",
+      "group": "Quality & Artifacts",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 5,
+      "developmentDetails": "Slowest tests, highest failure rates, FLAKY test registry with auto-quarantine status and linked remediation Home WorkItems."
+    },
+    {
+      "name": "Artifacts & SLSA Provenance",
+      "route": "build-artifacts",
+      "htmlFilePath": "pages/build-artifacts/build-artifacts.html",
+      "title": "Artifacts & SLSA Provenance",
+      "group": "Quality & Artifacts",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 6,
+      "developmentDetails": "DevBuildArtifact registry showing immutable sha256 digest, SLSA attestation badge, CVE scan status, and promoted environments (STAGING, PROD)."
+    },
+    {
+      "name": "Runner Pools & Compute FinOps",
+      "route": "runner-pools",
+      "htmlFilePath": "pages/runner-pools/runner-pools.html",
+      "title": "Runner Pools & Compute FinOps",
+      "group": "Quality & Artifacts",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 7,
+      "developmentDetails": "DevRunnerPool fleet monitor (LINUX_X64, ARM64, MACOS, GPU), live concurrency utilization, queue latency, and Decimal128 minute budget caps."
+    },
+    {
+      "name": "Deployment Environments",
+      "route": "environments",
+      "htmlFilePath": "pages/environments/environments.html",
+      "title": "Deployment Environments",
+      "group": "Deployments & Releases",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 8,
+      "developmentDetails": "Live environment board (DEV, QA, PREVIEW, STAGING, PRODUCTION) displaying active artifact version, health status, lock state, and freeze banner."
+    },
+    {
+      "name": "Releases & Rollbacks",
+      "route": "deployments",
+      "htmlFilePath": "pages/deployments/deployments.html",
+      "title": "Releases & Rollbacks",
+      "group": "Deployments & Releases",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 9,
+      "developmentDetails": "DevDeploymentRecord kanban + table (<rapider-kanban> + table) across PENDING_APPROVAL -> DEPLOYING -> VERIFYING -> SUCCEEDED / ROLLED_BACK with 1-Click Rollback."
+    },
+    {
+      "name": "Freeze Windows & Release Gates",
+      "route": "freeze-policies",
+      "htmlFilePath": "pages/freeze-policies/freeze-policies.html",
+      "title": "Freeze Windows & Release Gates",
+      "group": "Deployments & Releases",
+      "icon": "fas fa-code",
+      "displayInMenu": true,
+      "order": 10,
+      "developmentDetails": "Blackout calendar (DevDeploymentEnvironment freeze schedules), Segregation-of-Duties approver rules, and Continuous Verification rollback thresholds."
+    },
+    {
+      "name": "DAG Graph, Logs & AI RCA",
+      "route": "pipeline-run-detail",
+      "htmlFilePath": "pages/pipeline-run-detail/pipeline-run-detail.html",
+      "title": "DAG Graph, Logs & AI RCA",
+      "group": "(Hidden)",
+      "icon": "fas fa-code",
+      "displayInMenu": false,
+      "order": 11,
+      "developmentDetails": "Interactive fan-out/fan-in stage DAG (#/pipeline-run-detail?id=...), streaming DevPipelineStageJob ANSI log console, JUnit failures tab, AI Root-Cause drawer, and Back to Runs."
+    },
+    {
+      "name": "Progressive Rollout & War-Room",
+      "route": "deployment-detail",
+      "htmlFilePath": "pages/deployment-detail/deployment-detail.html",
+      "title": "Progressive Rollout & War-Room",
+      "group": "(Hidden)",
+      "icon": "fas fa-code",
+      "displayInMenu": false,
+      "order": 12,
+      "developmentDetails": "Canary traffic weight progression (10% -> 50% -> 100%), live #103/#097 health verification chart, projectChannelMessage release war room, plus sliding pipeline-env-drawer (displayOnMenu: false)."
+    }
+  ]
+}

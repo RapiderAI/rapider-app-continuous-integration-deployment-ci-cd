@@ -1,0 +1,1061 @@
+{
+  "ApmIssue": [
+    {
+      "id": "00000000-0102-0001-0000-000000000001",
+      "projectId": "00000000-0102-0001-0000-000000000001",
+      "epicId": "00000000-0102-0001-0000-000000000001",
+      "sprintId": "00000000-0102-0001-0000-000000000001",
+      "title": "Issue #1 — Enterprise Primary Record",
+      "description": "Issue description configuration (1)",
+      "type": "Issue type configuration (1)",
+      "status": "ACTIVE",
+      "priority": "Issue priority configuration (1)",
+      "storyPoints": 10,
+      "labelIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "isDeleted": false,
+      "assigneeId": "00000000-0102-0001-0000-000000000001",
+      "reporterId": "00000000-0102-0001-0000-000000000001"
+    },
+    {
+      "id": "00000000-0102-0001-0000-000000000002",
+      "projectId": "00000000-0102-0001-0000-000000000002",
+      "epicId": "00000000-0102-0001-0000-000000000002",
+      "sprintId": "00000000-0102-0001-0000-000000000002",
+      "title": "Issue #2 — Enterprise Operations Record",
+      "description": "Issue description configuration (2)",
+      "type": "Issue type configuration (2)",
+      "status": "IN_PROGRESS",
+      "priority": "Issue priority configuration (2)",
+      "storyPoints": 20,
+      "labelIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "isDeleted": false,
+      "assigneeId": "00000000-0102-0001-0000-000000000002",
+      "reporterId": "00000000-0102-0001-0000-000000000002"
+    },
+    {
+      "id": "00000000-0102-0001-0000-000000000003",
+      "projectId": "00000000-0102-0001-0000-000000000003",
+      "epicId": "00000000-0102-0001-0000-000000000003",
+      "sprintId": "00000000-0102-0001-0000-000000000003",
+      "title": "Issue #3 — Enterprise Compliance Record",
+      "description": "Issue description configuration (3)",
+      "type": "Issue type configuration (3)",
+      "status": "COMPLETED",
+      "priority": "Issue priority configuration (3)",
+      "storyPoints": 30,
+      "labelIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "isDeleted": false,
+      "assigneeId": "00000000-0102-0001-0000-000000000003",
+      "reporterId": "00000000-0102-0001-0000-000000000003"
+    }
+  ],
+  "ApmProject": [
+    {
+      "id": "00000000-0102-0002-0000-000000000001",
+      "name": "Project #1 — Enterprise Primary Record",
+      "description": "Project description configuration (1)",
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0002-0000-000000000002",
+      "name": "Project #2 — Enterprise Operations Record",
+      "description": "Project description configuration (2)",
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0002-0000-000000000003",
+      "name": "Project #3 — Enterprise Compliance Record",
+      "description": "Project description configuration (3)",
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatDashboard": [
+    {
+      "id": "00000000-0102-0003-0000-000000000001",
+      "slug": "DD-2026-0001",
+      "title": "Dashboard #1 — Enterprise Primary Record",
+      "collectionName": "Dashboard #1 — Enterprise Primary Record",
+      "description": "Dashboard description configuration (1)",
+      "globalFiltersSchemaJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "whatIfParametersJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "certificationStatus": "Dashboard certificationStatus configuration (1)",
+      "starterPackKey": "DD-2026-0001",
+      "viewCount90d": 10,
+      "discussionChannelId": "00000000-0102-0001-0000-000000000001",
+      "ownerUserId": "00000000-0102-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0003-0000-000000000002",
+      "slug": "DD-2026-0002",
+      "title": "Dashboard #2 — Enterprise Operations Record",
+      "collectionName": "Dashboard #2 — Enterprise Operations Record",
+      "description": "Dashboard description configuration (2)",
+      "globalFiltersSchemaJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "whatIfParametersJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "certificationStatus": "Dashboard certificationStatus configuration (2)",
+      "starterPackKey": "DD-2026-0002",
+      "viewCount90d": 20,
+      "discussionChannelId": "00000000-0102-0001-0000-000000000002",
+      "ownerUserId": "00000000-0102-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0003-0000-000000000003",
+      "slug": "DD-2026-0003",
+      "title": "Dashboard #3 — Enterprise Compliance Record",
+      "collectionName": "Dashboard #3 — Enterprise Compliance Record",
+      "description": "Dashboard description configuration (3)",
+      "globalFiltersSchemaJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "whatIfParametersJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "certificationStatus": "Dashboard certificationStatus configuration (3)",
+      "starterPackKey": "DD-2026-0003",
+      "viewCount90d": 30,
+      "discussionChannelId": "00000000-0102-0001-0000-000000000003",
+      "ownerUserId": "00000000-0102-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatTrackedEvent": [
+    {
+      "id": "00000000-0102-0004-0000-000000000001",
+      "sourceId": "00000000-0102-0001-0000-000000000001",
+      "eventName": "Tracked Event #1 — Enterprise Primary Record",
+      "distinctUserId": "00000000-0102-0001-0000-000000000001",
+      "anonymousId": "00000000-0102-0001-0000-000000000001",
+      "crmAccountId": "00000000-0102-0001-0000-000000000001",
+      "crmContactId": "00000000-0102-0001-0000-000000000001",
+      "occurredAt": "2026-11-01T10:00:00Z",
+      "ingestedAt": "2026-11-01T10:00:00Z",
+      "propertiesJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "revenueAmount": 1250,
+      "currencyCode": "DTE-2026-0001",
+      "frictionFlags": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "idempotencyKey": "DTE-2026-0001",
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0004-0000-000000000002",
+      "sourceId": "00000000-0102-0001-0000-000000000002",
+      "eventName": "Tracked Event #2 — Enterprise Operations Record",
+      "distinctUserId": "00000000-0102-0001-0000-000000000002",
+      "anonymousId": "00000000-0102-0001-0000-000000000002",
+      "crmAccountId": "00000000-0102-0001-0000-000000000002",
+      "crmContactId": "00000000-0102-0001-0000-000000000002",
+      "occurredAt": "2026-11-02T10:00:00Z",
+      "ingestedAt": "2026-11-02T10:00:00Z",
+      "propertiesJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "revenueAmount": 2500,
+      "currencyCode": "DTE-2026-0002",
+      "frictionFlags": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "idempotencyKey": "DTE-2026-0002",
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0004-0000-000000000003",
+      "sourceId": "00000000-0102-0001-0000-000000000003",
+      "eventName": "Tracked Event #3 — Enterprise Compliance Record",
+      "distinctUserId": "00000000-0102-0001-0000-000000000003",
+      "anonymousId": "00000000-0102-0001-0000-000000000003",
+      "crmAccountId": "00000000-0102-0001-0000-000000000003",
+      "crmContactId": "00000000-0102-0001-0000-000000000003",
+      "occurredAt": "2026-11-03T10:00:00Z",
+      "ingestedAt": "2026-11-03T10:00:00Z",
+      "propertiesJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "revenueAmount": 3750,
+      "currencyCode": "DTE-2026-0003",
+      "frictionFlags": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "idempotencyKey": "DTE-2026-0003",
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DevBranchRule": [
+    {
+      "id": "00000000-0102-0005-0000-000000000001",
+      "repositoryId": "00000000-0102-0001-0000-000000000001",
+      "scopeLevel": "Branch Rule scopeLevel configuration (1)",
+      "branchPattern": "Branch Rule branchPattern configuration (1)",
+      "minApprovals": 10,
+      "blockAuthorSelfApproval": true,
+      "dismissStaleReviewsOnPush": true,
+      "requireCodeOwnersReview": true,
+      "codeOwnersRulesJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "requiredStatusChecks": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "requireLinkedApmIssue": true,
+      "requireSignedCommits": true,
+      "blockForcePush": true,
+      "isEnabled": true,
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0005-0000-000000000002",
+      "repositoryId": "00000000-0102-0001-0000-000000000002",
+      "scopeLevel": "Branch Rule scopeLevel configuration (2)",
+      "branchPattern": "Branch Rule branchPattern configuration (2)",
+      "minApprovals": 20,
+      "blockAuthorSelfApproval": true,
+      "dismissStaleReviewsOnPush": true,
+      "requireCodeOwnersReview": true,
+      "codeOwnersRulesJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "requiredStatusChecks": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "requireLinkedApmIssue": true,
+      "requireSignedCommits": true,
+      "blockForcePush": true,
+      "isEnabled": true,
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0005-0000-000000000003",
+      "repositoryId": "00000000-0102-0001-0000-000000000003",
+      "scopeLevel": "Branch Rule scopeLevel configuration (3)",
+      "branchPattern": "Branch Rule branchPattern configuration (3)",
+      "minApprovals": 30,
+      "blockAuthorSelfApproval": false,
+      "dismissStaleReviewsOnPush": false,
+      "requireCodeOwnersReview": false,
+      "codeOwnersRulesJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "requiredStatusChecks": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "requireLinkedApmIssue": false,
+      "requireSignedCommits": false,
+      "blockForcePush": false,
+      "isEnabled": false,
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DevPullRequest": [
+    {
+      "id": "00000000-0102-0006-0000-000000000001",
+      "repositoryId": "00000000-0102-0001-0000-000000000001",
+      "prNumber": 10,
+      "title": "Pull Request #1 — Enterprise Primary Record",
+      "descriptionMarkdown": "Pull Request descriptionMarkdown configuration (1)",
+      "sourceBranch": "Pull Request sourceBranch configuration (1)",
+      "targetBranch": "Pull Request targetBranch configuration (1)",
+      "headCommitSha": "Pull Request headCommitSha configuration (1)",
+      "baseCommitSha": "Pull Request baseCommitSha configuration (1)",
+      "status": "ACTIVE",
+      "riskLevel": "Pull Request riskLevel configuration (1)",
+      "authorUserId": "00000000-0102-0001-0000-000000000001",
+      "requiredReviewerIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "approvedByUserIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "unresolvedThreadCount": 10,
+      "checksStatus": "Pull Request checksStatus configuration (1)",
+      "linkedApmIssueIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "mergeQueuePosition": 10,
+      "mergedByUserId": "00000000-0102-0001-0000-000000000001",
+      "mergedAt": "2026-11-01T10:00:00Z",
+      "discussionChannelId": "00000000-0102-0001-0000-000000000001",
+      "activeWorkItemIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "version": 1,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0006-0000-000000000002",
+      "repositoryId": "00000000-0102-0001-0000-000000000002",
+      "prNumber": 20,
+      "title": "Pull Request #2 — Enterprise Operations Record",
+      "descriptionMarkdown": "Pull Request descriptionMarkdown configuration (2)",
+      "sourceBranch": "Pull Request sourceBranch configuration (2)",
+      "targetBranch": "Pull Request targetBranch configuration (2)",
+      "headCommitSha": "Pull Request headCommitSha configuration (2)",
+      "baseCommitSha": "Pull Request baseCommitSha configuration (2)",
+      "status": "IN_PROGRESS",
+      "riskLevel": "Pull Request riskLevel configuration (2)",
+      "authorUserId": "00000000-0102-0001-0000-000000000002",
+      "requiredReviewerIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "approvedByUserIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "unresolvedThreadCount": 20,
+      "checksStatus": "Pull Request checksStatus configuration (2)",
+      "linkedApmIssueIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "mergeQueuePosition": 20,
+      "mergedByUserId": "00000000-0102-0001-0000-000000000002",
+      "mergedAt": "2026-11-02T10:00:00Z",
+      "discussionChannelId": "00000000-0102-0001-0000-000000000002",
+      "activeWorkItemIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "version": 2,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0006-0000-000000000003",
+      "repositoryId": "00000000-0102-0001-0000-000000000003",
+      "prNumber": 30,
+      "title": "Pull Request #3 — Enterprise Compliance Record",
+      "descriptionMarkdown": "Pull Request descriptionMarkdown configuration (3)",
+      "sourceBranch": "Pull Request sourceBranch configuration (3)",
+      "targetBranch": "Pull Request targetBranch configuration (3)",
+      "headCommitSha": "Pull Request headCommitSha configuration (3)",
+      "baseCommitSha": "Pull Request baseCommitSha configuration (3)",
+      "status": "COMPLETED",
+      "riskLevel": "Pull Request riskLevel configuration (3)",
+      "authorUserId": "00000000-0102-0001-0000-000000000003",
+      "requiredReviewerIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "approvedByUserIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "unresolvedThreadCount": 30,
+      "checksStatus": "Pull Request checksStatus configuration (3)",
+      "linkedApmIssueIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "mergeQueuePosition": 30,
+      "mergedByUserId": "00000000-0102-0001-0000-000000000003",
+      "mergedAt": "2026-11-03T10:00:00Z",
+      "discussionChannelId": "00000000-0102-0001-0000-000000000003",
+      "activeWorkItemIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "version": 3,
+      "isDeleted": false
+    }
+  ],
+  "DevReleaseTag": [
+    {
+      "id": "00000000-0102-0007-0000-000000000001",
+      "repositoryId": "00000000-0102-0001-0000-000000000001",
+      "tagName": "Release Tag #1 — Enterprise Primary Record",
+      "targetCommitSha": "Release Tag targetCommitSha configuration (1)",
+      "title": "Release Tag #1 — Enterprise Primary Record",
+      "changelogMarkdown": "Release Tag changelogMarkdown configuration (1)",
+      "isPrerelease": true,
+      "assetFileIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "assetChecksumsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "publishedByUserId": "00000000-0102-0001-0000-000000000001",
+      "publishedAt": "2026-11-01T10:00:00Z",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0007-0000-000000000002",
+      "repositoryId": "00000000-0102-0001-0000-000000000002",
+      "tagName": "Release Tag #2 — Enterprise Operations Record",
+      "targetCommitSha": "Release Tag targetCommitSha configuration (2)",
+      "title": "Release Tag #2 — Enterprise Operations Record",
+      "changelogMarkdown": "Release Tag changelogMarkdown configuration (2)",
+      "isPrerelease": true,
+      "assetFileIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "assetChecksumsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "publishedByUserId": "00000000-0102-0001-0000-000000000002",
+      "publishedAt": "2026-11-02T10:00:00Z",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0007-0000-000000000003",
+      "repositoryId": "00000000-0102-0001-0000-000000000003",
+      "tagName": "Release Tag #3 — Enterprise Compliance Record",
+      "targetCommitSha": "Release Tag targetCommitSha configuration (3)",
+      "title": "Release Tag #3 — Enterprise Compliance Record",
+      "changelogMarkdown": "Release Tag changelogMarkdown configuration (3)",
+      "isPrerelease": false,
+      "assetFileIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "assetChecksumsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "publishedByUserId": "00000000-0102-0001-0000-000000000003",
+      "publishedAt": "2026-11-03T10:00:00Z",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DevRepository": [
+    {
+      "id": "00000000-0102-0008-0000-000000000001",
+      "slug": "DR-2026-0001",
+      "name": "Repository #1 — Enterprise Primary Record",
+      "description": "Repository description configuration (1)",
+      "visibility": "Repository visibility configuration (1)",
+      "defaultBranch": "Repository defaultBranch configuration (1)",
+      "isTemplate": true,
+      "templateRepoId": "00000000-0102-0001-0000-000000000001",
+      "allowedMergeStrategies": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "enableMergeQueue": true,
+      "secretPushProtection": true,
+      "mirrorVaultSecretRef": "Repository mirrorVaultSecretRef configuration (1)",
+      "storageUsedMb": 10,
+      "apmProjectId": "00000000-0102-0001-0000-000000000001",
+      "ownerDepartmentId": "00000000-0102-0001-0000-000000000001",
+      "status": "ACTIVE",
+      "version": 1,
+      "gitRepoRef": "Repository gitRepoRef configuration (1)",
+      "newCodeHorizonType": "DR-2026-0001",
+      "repoName": "Repository #1 — Enterprise Primary Record",
+      "providerType": "Repository providerType configuration (1)",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0008-0000-000000000002",
+      "slug": "DR-2026-0002",
+      "name": "Repository #2 — Enterprise Operations Record",
+      "description": "Repository description configuration (2)",
+      "visibility": "Repository visibility configuration (2)",
+      "defaultBranch": "Repository defaultBranch configuration (2)",
+      "isTemplate": true,
+      "templateRepoId": "00000000-0102-0001-0000-000000000002",
+      "allowedMergeStrategies": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "enableMergeQueue": true,
+      "secretPushProtection": true,
+      "mirrorVaultSecretRef": "Repository mirrorVaultSecretRef configuration (2)",
+      "storageUsedMb": 20,
+      "apmProjectId": "00000000-0102-0001-0000-000000000002",
+      "ownerDepartmentId": "00000000-0102-0001-0000-000000000002",
+      "status": "IN_PROGRESS",
+      "version": 2,
+      "gitRepoRef": "Repository gitRepoRef configuration (2)",
+      "newCodeHorizonType": "DR-2026-0002",
+      "repoName": "Repository #2 — Enterprise Operations Record",
+      "providerType": "Repository providerType configuration (2)",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0008-0000-000000000003",
+      "slug": "DR-2026-0003",
+      "name": "Repository #3 — Enterprise Compliance Record",
+      "description": "Repository description configuration (3)",
+      "visibility": "Repository visibility configuration (3)",
+      "defaultBranch": "Repository defaultBranch configuration (3)",
+      "isTemplate": false,
+      "templateRepoId": "00000000-0102-0001-0000-000000000003",
+      "allowedMergeStrategies": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "enableMergeQueue": false,
+      "secretPushProtection": false,
+      "mirrorVaultSecretRef": "Repository mirrorVaultSecretRef configuration (3)",
+      "storageUsedMb": 30,
+      "apmProjectId": "00000000-0102-0001-0000-000000000003",
+      "ownerDepartmentId": "00000000-0102-0001-0000-000000000003",
+      "status": "COMPLETED",
+      "version": 3,
+      "gitRepoRef": "Repository gitRepoRef configuration (3)",
+      "newCodeHorizonType": "DR-2026-0003",
+      "repoName": "Repository #3 — Enterprise Compliance Record",
+      "providerType": "Repository providerType configuration (3)",
+      "isDeleted": false
+    }
+  ],
+  "DevPipelineDefinition": [
+    {
+      "id": "00000000-0102-0009-0000-000000000001",
+      "code": "DPD-2026-0001",
+      "name": "Pipeline Definition #1 — Enterprise Primary Record",
+      "repositoryId": "00000000-0102-0001-0000-000000000001",
+      "yamlSpec": "Pipeline Definition yamlSpec configuration (1)",
+      "templateOrbCode": "DPD-2026-0001",
+      "triggers": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "monorepoPathGlobs": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "defaultRunnerPoolId": "00000000-0102-0001-0000-000000000001",
+      "oidcCloudRoleArnOrUri": "Pipeline Definition oidcCloudRoleArnOrUri configuration (1)",
+      "vaultSecretRefs": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "flakyAutoRerunMax": 10,
+      "isEnabled": true,
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0009-0000-000000000002",
+      "code": "DPD-2026-0002",
+      "name": "Pipeline Definition #2 — Enterprise Operations Record",
+      "repositoryId": "00000000-0102-0001-0000-000000000002",
+      "yamlSpec": "Pipeline Definition yamlSpec configuration (2)",
+      "templateOrbCode": "DPD-2026-0002",
+      "triggers": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "monorepoPathGlobs": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "defaultRunnerPoolId": "00000000-0102-0001-0000-000000000002",
+      "oidcCloudRoleArnOrUri": "Pipeline Definition oidcCloudRoleArnOrUri configuration (2)",
+      "vaultSecretRefs": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "flakyAutoRerunMax": 20,
+      "isEnabled": true,
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0009-0000-000000000003",
+      "code": "DPD-2026-0003",
+      "name": "Pipeline Definition #3 — Enterprise Compliance Record",
+      "repositoryId": "00000000-0102-0001-0000-000000000003",
+      "yamlSpec": "Pipeline Definition yamlSpec configuration (3)",
+      "templateOrbCode": "DPD-2026-0003",
+      "triggers": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "monorepoPathGlobs": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "defaultRunnerPoolId": "00000000-0102-0001-0000-000000000003",
+      "oidcCloudRoleArnOrUri": "Pipeline Definition oidcCloudRoleArnOrUri configuration (3)",
+      "vaultSecretRefs": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "flakyAutoRerunMax": 30,
+      "isEnabled": false,
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DevPipelineRun": [
+    {
+      "id": "00000000-0102-0010-0000-000000000001",
+      "pipelineId": "00000000-0102-0001-0000-000000000001",
+      "runNumber": 10,
+      "repositoryId": "00000000-0102-0001-0000-000000000001",
+      "commitSha": "Pipeline Run commitSha configuration (1)",
+      "branchOrTag": "Pipeline Run branchOrTag configuration (1)",
+      "pullRequestId": "00000000-0102-0001-0000-000000000001",
+      "triggerType": "Pipeline Run triggerType configuration (1)",
+      "triggeredByUserId": "00000000-0102-0001-0000-000000000001",
+      "status": "ACTIVE",
+      "startedAt": "2026-11-01T10:00:00Z",
+      "completedAt": "2026-11-01T10:00:00Z",
+      "durationSeconds": 10,
+      "computeCreditsUsed": 10,
+      "flakyTestsDetectedCount": 10,
+      "discussionChannelId": "00000000-0102-0001-0000-000000000001",
+      "idempotencyKey": "DPR-2026-0001",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0010-0000-000000000002",
+      "pipelineId": "00000000-0102-0001-0000-000000000002",
+      "runNumber": 20,
+      "repositoryId": "00000000-0102-0001-0000-000000000002",
+      "commitSha": "Pipeline Run commitSha configuration (2)",
+      "branchOrTag": "Pipeline Run branchOrTag configuration (2)",
+      "pullRequestId": "00000000-0102-0001-0000-000000000002",
+      "triggerType": "Pipeline Run triggerType configuration (2)",
+      "triggeredByUserId": "00000000-0102-0001-0000-000000000002",
+      "status": "IN_PROGRESS",
+      "startedAt": "2026-11-02T10:00:00Z",
+      "completedAt": "2026-11-02T10:00:00Z",
+      "durationSeconds": 20,
+      "computeCreditsUsed": 20,
+      "flakyTestsDetectedCount": 20,
+      "discussionChannelId": "00000000-0102-0001-0000-000000000002",
+      "idempotencyKey": "DPR-2026-0002",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0010-0000-000000000003",
+      "pipelineId": "00000000-0102-0001-0000-000000000003",
+      "runNumber": 30,
+      "repositoryId": "00000000-0102-0001-0000-000000000003",
+      "commitSha": "Pipeline Run commitSha configuration (3)",
+      "branchOrTag": "Pipeline Run branchOrTag configuration (3)",
+      "pullRequestId": "00000000-0102-0001-0000-000000000003",
+      "triggerType": "Pipeline Run triggerType configuration (3)",
+      "triggeredByUserId": "00000000-0102-0001-0000-000000000003",
+      "status": "COMPLETED",
+      "startedAt": "2026-11-03T10:00:00Z",
+      "completedAt": "2026-11-03T10:00:00Z",
+      "durationSeconds": 30,
+      "computeCreditsUsed": 30,
+      "flakyTestsDetectedCount": 30,
+      "discussionChannelId": "00000000-0102-0001-0000-000000000003",
+      "idempotencyKey": "DPR-2026-0003",
+      "isDeleted": false
+    }
+  ],
+  "DevPipelineStageJob": [
+    {
+      "id": "00000000-0102-0011-0000-000000000001",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000001",
+      "stageName": "Pipeline Stage Job #1 — Enterprise Primary Record",
+      "jobName": "Pipeline Stage Job #1 — Enterprise Primary Record",
+      "shardIndex": 10,
+      "shardTotal": 10,
+      "dependsOnJobNames": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "runnerPoolId": "00000000-0102-0001-0000-000000000001",
+      "status": "ACTIVE",
+      "exitCode": 10,
+      "cacheHit": true,
+      "testSummaryJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "redactedLogFileId": "00000000-0102-0001-0000-000000000001",
+      "durationMs": 10,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0011-0000-000000000002",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000002",
+      "stageName": "Pipeline Stage Job #2 — Enterprise Operations Record",
+      "jobName": "Pipeline Stage Job #2 — Enterprise Operations Record",
+      "shardIndex": 20,
+      "shardTotal": 20,
+      "dependsOnJobNames": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "runnerPoolId": "00000000-0102-0001-0000-000000000002",
+      "status": "IN_PROGRESS",
+      "exitCode": 20,
+      "cacheHit": true,
+      "testSummaryJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "redactedLogFileId": "00000000-0102-0001-0000-000000000002",
+      "durationMs": 20,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0011-0000-000000000003",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000003",
+      "stageName": "Pipeline Stage Job #3 — Enterprise Compliance Record",
+      "jobName": "Pipeline Stage Job #3 — Enterprise Compliance Record",
+      "shardIndex": 30,
+      "shardTotal": 30,
+      "dependsOnJobNames": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "runnerPoolId": "00000000-0102-0001-0000-000000000003",
+      "status": "COMPLETED",
+      "exitCode": 30,
+      "cacheHit": false,
+      "testSummaryJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "redactedLogFileId": "00000000-0102-0001-0000-000000000003",
+      "durationMs": 30,
+      "isDeleted": false
+    }
+  ],
+  "DevBuildArtifact": [
+    {
+      "id": "00000000-0102-0012-0000-000000000001",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000001",
+      "repositoryId": "00000000-0102-0001-0000-000000000001",
+      "commitSha": "Build Artifact commitSha configuration (1)",
+      "artifactName": "Build Artifact #1 — Enterprise Primary Record",
+      "artifactType": "Build Artifact artifactType configuration (1)",
+      "immutableDigestSha256": "Build Artifact immutableDigestSha256 configuration (1)",
+      "storageUriOrFileId": "00000000-0102-0001-0000-000000000001",
+      "sizeBytes": 10,
+      "slsaProvenanceJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "criticalCveCount": 10,
+      "retentionExpiresAt": "2026-11-01T10:00:00Z",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0012-0000-000000000002",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000002",
+      "repositoryId": "00000000-0102-0001-0000-000000000002",
+      "commitSha": "Build Artifact commitSha configuration (2)",
+      "artifactName": "Build Artifact #2 — Enterprise Operations Record",
+      "artifactType": "Build Artifact artifactType configuration (2)",
+      "immutableDigestSha256": "Build Artifact immutableDigestSha256 configuration (2)",
+      "storageUriOrFileId": "00000000-0102-0001-0000-000000000002",
+      "sizeBytes": 20,
+      "slsaProvenanceJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "criticalCveCount": 20,
+      "retentionExpiresAt": "2026-11-02T10:00:00Z",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0012-0000-000000000003",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000003",
+      "repositoryId": "00000000-0102-0001-0000-000000000003",
+      "commitSha": "Build Artifact commitSha configuration (3)",
+      "artifactName": "Build Artifact #3 — Enterprise Compliance Record",
+      "artifactType": "Build Artifact artifactType configuration (3)",
+      "immutableDigestSha256": "Build Artifact immutableDigestSha256 configuration (3)",
+      "storageUriOrFileId": "00000000-0102-0001-0000-000000000003",
+      "sizeBytes": 30,
+      "slsaProvenanceJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "criticalCveCount": 30,
+      "retentionExpiresAt": "2026-11-03T10:00:00Z",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DevRunnerPool": [
+    {
+      "id": "00000000-0102-0013-0000-000000000001",
+      "code": "DRP-2026-0001",
+      "name": "Runner Pool #1 — Enterprise Primary Record",
+      "poolMode": "Runner Pool poolMode configuration (1)",
+      "archType": "Runner Pool archType configuration (1)",
+      "maxConcurrency": 10,
+      "activeJobsCount": 10,
+      "creditRatePerMin": 85,
+      "monthlyCreditBudget": 1250,
+      "creditsUsedMonth": 10,
+      "status": "ACTIVE",
+      "version": 1,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0013-0000-000000000002",
+      "code": "DRP-2026-0002",
+      "name": "Runner Pool #2 — Enterprise Operations Record",
+      "poolMode": "Runner Pool poolMode configuration (2)",
+      "archType": "Runner Pool archType configuration (2)",
+      "maxConcurrency": 20,
+      "activeJobsCount": 20,
+      "creditRatePerMin": 90,
+      "monthlyCreditBudget": 2500,
+      "creditsUsedMonth": 20,
+      "status": "IN_PROGRESS",
+      "version": 2,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0013-0000-000000000003",
+      "code": "DRP-2026-0003",
+      "name": "Runner Pool #3 — Enterprise Compliance Record",
+      "poolMode": "Runner Pool poolMode configuration (3)",
+      "archType": "Runner Pool archType configuration (3)",
+      "maxConcurrency": 30,
+      "activeJobsCount": 30,
+      "creditRatePerMin": 95,
+      "monthlyCreditBudget": 3750,
+      "creditsUsedMonth": 30,
+      "status": "COMPLETED",
+      "version": 3,
+      "isDeleted": false
+    }
+  ],
+  "DevDeploymentEnvironment": [
+    {
+      "id": "00000000-0102-0014-0000-000000000001",
+      "code": "DDE-2026-0001",
+      "name": "Deployment Environment #1 — Enterprise Primary Record",
+      "tier": "Deployment Environment tier configuration (1)",
+      "rolloutStrategy": "Deployment Environment rolloutStrategy configuration (1)",
+      "allowedBranchGlobs": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "requireApproval": true,
+      "approverUserIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "blockCommitAuthorApproval": true,
+      "freezeWindowsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "errorRateRollbackThresholdPct": 85,
+      "activeArtifactId": "00000000-0102-0001-0000-000000000001",
+      "isLockedByDeploymentId": "00000000-0102-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0014-0000-000000000002",
+      "code": "DDE-2026-0002",
+      "name": "Deployment Environment #2 — Enterprise Operations Record",
+      "tier": "Deployment Environment tier configuration (2)",
+      "rolloutStrategy": "Deployment Environment rolloutStrategy configuration (2)",
+      "allowedBranchGlobs": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "requireApproval": true,
+      "approverUserIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "blockCommitAuthorApproval": true,
+      "freezeWindowsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "errorRateRollbackThresholdPct": 90,
+      "activeArtifactId": "00000000-0102-0001-0000-000000000002",
+      "isLockedByDeploymentId": "00000000-0102-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0014-0000-000000000003",
+      "code": "DDE-2026-0003",
+      "name": "Deployment Environment #3 — Enterprise Compliance Record",
+      "tier": "Deployment Environment tier configuration (3)",
+      "rolloutStrategy": "Deployment Environment rolloutStrategy configuration (3)",
+      "allowedBranchGlobs": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "requireApproval": false,
+      "approverUserIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "blockCommitAuthorApproval": false,
+      "freezeWindowsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "errorRateRollbackThresholdPct": 95,
+      "activeArtifactId": "00000000-0102-0001-0000-000000000003",
+      "isLockedByDeploymentId": "00000000-0102-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DevDeploymentRecord": [
+    {
+      "id": "00000000-0102-0015-0000-000000000001",
+      "environmentId": "00000000-0102-0001-0000-000000000001",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000001",
+      "artifactId": "00000000-0102-0001-0000-000000000001",
+      "previousArtifactId": "00000000-0102-0001-0000-000000000001",
+      "commitSha": "Deployment Record commitSha configuration (1)",
+      "linkedApmIssueIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "status": "ACTIVE",
+      "canaryWeightPct": 85,
+      "approvedByUserId": "00000000-0102-0001-0000-000000000001",
+      "rollbackOfDeploymentId": "00000000-0102-0001-0000-000000000001",
+      "verificationMetricsJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "activeWorkItemId": "00000000-0102-0001-0000-000000000001",
+      "discussionChannelId": "00000000-0102-0001-0000-000000000001",
+      "startedAt": "2026-11-01T10:00:00Z",
+      "completedAt": "2026-11-01T10:00:00Z",
+      "version": 1,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0015-0000-000000000002",
+      "environmentId": "00000000-0102-0001-0000-000000000002",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000002",
+      "artifactId": "00000000-0102-0001-0000-000000000002",
+      "previousArtifactId": "00000000-0102-0001-0000-000000000002",
+      "commitSha": "Deployment Record commitSha configuration (2)",
+      "linkedApmIssueIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "status": "IN_PROGRESS",
+      "canaryWeightPct": 90,
+      "approvedByUserId": "00000000-0102-0001-0000-000000000002",
+      "rollbackOfDeploymentId": "00000000-0102-0001-0000-000000000002",
+      "verificationMetricsJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "activeWorkItemId": "00000000-0102-0001-0000-000000000002",
+      "discussionChannelId": "00000000-0102-0001-0000-000000000002",
+      "startedAt": "2026-11-02T10:00:00Z",
+      "completedAt": "2026-11-02T10:00:00Z",
+      "version": 2,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0102-0015-0000-000000000003",
+      "environmentId": "00000000-0102-0001-0000-000000000003",
+      "pipelineRunId": "00000000-0102-0001-0000-000000000003",
+      "artifactId": "00000000-0102-0001-0000-000000000003",
+      "previousArtifactId": "00000000-0102-0001-0000-000000000003",
+      "commitSha": "Deployment Record commitSha configuration (3)",
+      "linkedApmIssueIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "status": "COMPLETED",
+      "canaryWeightPct": 95,
+      "approvedByUserId": "00000000-0102-0001-0000-000000000003",
+      "rollbackOfDeploymentId": "00000000-0102-0001-0000-000000000003",
+      "verificationMetricsJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "activeWorkItemId": "00000000-0102-0001-0000-000000000003",
+      "discussionChannelId": "00000000-0102-0001-0000-000000000003",
+      "startedAt": "2026-11-03T10:00:00Z",
+      "completedAt": "2026-11-03T10:00:00Z",
+      "version": 3,
+      "isDeleted": false
+    }
+  ]
+}

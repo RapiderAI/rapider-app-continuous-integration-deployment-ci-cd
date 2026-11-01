@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapider Continuous Integration / Deployment</title>
+  <script src="https://kit.fontawesome.com/5b23df26dc.js" crossorigin="anonymous" defer></script>
+  <script src="/assets/js/rapider-components.js" defer></script>
+  <link rel="stylesheet" href="/assets/themes/rapider-tailwind-theme.css">
+  <link rel="stylesheet" href="/assets/themes/crm-expenses-design.css">
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+    iframe#appFrame { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <iframe id="appFrame" src="pages/cicd-overview/cicd-overview.html"></iframe>
+  <script>
+    const routes = {
+  "cicd-overview": "pages/cicd-overview/cicd-overview.html",
+  "pipelines": "pages/pipelines/pipelines.html",
+  "pipeline-runs": "pages/pipeline-runs/pipeline-runs.html",
+  "pipeline-templates": "pages/pipeline-templates/pipeline-templates.html",
+  "test-insights": "pages/test-insights/test-insights.html",
+  "build-artifacts": "pages/build-artifacts/build-artifacts.html",
+  "runner-pools": "pages/runner-pools/runner-pools.html",
+  "environments": "pages/environments/environments.html",
+  "deployments": "pages/deployments/deployments.html",
+  "freeze-policies": "pages/freeze-policies/freeze-policies.html",
+  "pipeline-run-detail": "pages/pipeline-run-detail/pipeline-run-detail.html",
+  "deployment-detail": "pages/deployment-detail/deployment-detail.html"
+};
+    function handleHash() {
+      const hash = window.location.hash.replace(/^#\/?/, '').split('?')[0];
+      const route = hash || 'cicd-overview';
+      const target = routes[route] || routes['cicd-overview'];
+      const iframe = document.getElementById('appFrame');
+      if (iframe) iframe.src = target;
+    }
+    window.addEventListener('hashchange', handleHash);
+    window.addEventListener('load', handleHash);
+  </script>
+</body>
+</html>
